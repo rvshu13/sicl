@@ -1,0 +1,63 @@
+body {
+  background: #575757;
+}
+
+/* Containers */
+/* Optional to add containers in global */
+/* Adding for demo purpose only */
+.container {
+  background: #fff;
+  border-radius: 16px;
+  margin: 200px 400px;
+  padding: 200px 200px;
+}
+
+.container .row {
+  margin: 24px auto;
+  display: flex;
+}
+
+.container .row.space-between {
+  justify-content: space-between;
+}
+.container .row.center {
+  justify-content: center;
+}
+.container .row.v-center {
+  align-items: center;
+}
+
+@media (max-width: 1800px) {
+  .container {
+    padding: 0 400px;
+  }
+}
+@media (max-width: 1650px) {
+  .container {
+    padding: 0 300px;
+  }
+}
+
+@media (max-width: 1450px) {
+  .container {
+    padding: 0 200px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 100px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 0 60px;
+  }
+}
+
+@media (max-width: 700px) {
+  .container {
+    padding: 0 32px;
+  }
+}

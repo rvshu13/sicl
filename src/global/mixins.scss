@@ -1,0 +1,54 @@
+@use "sass:color";
+
+@import url('https://rsms.me/inter/inter.css');
+
+html {
+  font-family: 'Inter', sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: 'Inter var', sans-serif;
+  }
+}
+
+@mixin button {
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 24px;
+  font-family: $typography_font-family;
+  font-size: $typography_size-body-1;
+  font-weight: $typography_weight-semi-bold;
+}
+
+h1 {
+  font-family: $typography_font-family;
+  font-weight: $typography_weight-extra-bold;
+  font-size: $typography_size-header-1;
+  line-height: $typography_line-height-header-1;
+  margin: 0;
+}
+
+h2 {
+  font-weight: $typography_weight-extra-bold;
+  font-size: $typography_size-header-2;
+  line-height: $typography_line-height-header-2;
+  margin: 0;
+}
+
+h3 {
+  font-weight: $typography_weight-bold;
+  font-size: $typography_size-header-3;
+  line-height: $typography_line-height-header-3;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
