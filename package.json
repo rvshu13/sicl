@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "@stencil/core": "^2.11.0",
+    "feather-icons": "^4.28.0",
     "inter-ui": "^3.19.3"
   },
   "devDependencies": {

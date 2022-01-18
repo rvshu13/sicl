@@ -19,6 +19,8 @@ html {
   outline: none;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 16px;
   justify-content: center;
   align-items: center;
   padding: 8px 24px;

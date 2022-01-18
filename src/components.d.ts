@@ -8,8 +8,14 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface SiclButton {
         "disabled": boolean;
+        "icon": string;
+        "iconPosition": 'left' | 'right';
         "text": string;
-        "type": string;
+        "type": 'primary' | 'secondary' | 'tertiary' | 'warning';
+    }
+    interface SiclIcon {
+        "name": string;
+        "size": string;
     }
 }
 declare global {
@@ -19,18 +25,32 @@ declare global {
         prototype: HTMLSiclButtonElement;
         new (): HTMLSiclButtonElement;
     };
+    interface HTMLSiclIconElement extends Components.SiclIcon, HTMLStencilElement {
+    }
+    var HTMLSiclIconElement: {
+        prototype: HTMLSiclIconElement;
+        new (): HTMLSiclIconElement;
+    };
     interface HTMLElementTagNameMap {
         "sicl-button": HTMLSiclButtonElement;
+        "sicl-icon": HTMLSiclIconElement;
     }
 }
 declare namespace LocalJSX {
     interface SiclButton {
         "disabled"?: boolean;
+        "icon"?: string;
+        "iconPosition"?: 'left' | 'right';
         "text"?: string;
-        "type"?: string;
+        "type"?: 'primary' | 'secondary' | 'tertiary' | 'warning';
+    }
+    interface SiclIcon {
+        "name"?: string;
+        "size"?: string;
     }
     interface IntrinsicElements {
         "sicl-button": SiclButton;
+        "sicl-icon": SiclIcon;
     }
 }
 export { LocalJSX as JSX };
@@ -38,6 +58,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "sicl-button": LocalJSX.SiclButton & JSXBase.HTMLAttributes<HTMLSiclButtonElement>;
+            "sicl-icon": LocalJSX.SiclIcon & JSXBase.HTMLAttributes<HTMLSiclIconElement>;
         }
     }
 }
