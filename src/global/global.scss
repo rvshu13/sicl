@@ -1,15 +1,16 @@
-body {
-  background: #575757;
-}
-
 /* Containers */
 /* Optional to add containers in global */
 /* Adding for demo purpose only */
 .container {
-  background: #fff;
-  border-radius: 16px;
-  margin: 200px 400px;
-  padding: 200px 200px;
+  &__title {
+    font-weight: 300;
+    color: $primary-900;
+    margin-bottom: 12px;
+  }
+
+  &__divider {
+    border: 1px solid $primary-900;
+  }
 }
 
 .container .row {
