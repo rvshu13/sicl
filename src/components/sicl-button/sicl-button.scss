@@ -10,7 +10,7 @@
 
     &[disabled] {
       @include button;
-      cursor: default;
+      cursor: not-allowed;
       background: $neutral-200;
       color: $neutral-600;
     }
@@ -34,7 +34,7 @@
 
     &[disabled] {
       @include button;
-      cursor: default;
+      cursor: not-allowed;
       background: none;
       outline: $neutral-300 solid 1px;
       outline-offset: -1px;
@@ -60,7 +60,7 @@
 
     &[disabled] {
       @include button;
-      cursor: default;
+      cursor: not-allowed;
       background: none;
       color: $neutral-400;
     }
@@ -84,7 +84,7 @@
 
     &[disabled] {
       @include button;
-      cursor: default;
+      cursor: not-allowed;
       background: none;
       outline: $warning-light solid 1px;
       outline-offset: -1px;

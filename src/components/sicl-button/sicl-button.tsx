@@ -7,34 +7,18 @@ import { Component, h, Prop } from '@stencil/core';
 })
 export class SiclButton {
   @Prop() text: string;
-  @Prop() icon: string;
-  @Prop() iconPosition: 'left' | 'right' = 'left';
+  @Prop() iconLeft: string;
+  @Prop() iconRight: string;
   @Prop() type: 'primary' | 'secondary' | 'tertiary' | 'warning' = 'primary';
   @Prop() disabled: boolean;
 
   render() {
-    if (this.icon) {
-      if (this.iconPosition === 'right') {
-        return (
-          <button class={`btn ${this.type}`} disabled={this.disabled} type="button">
-            {this.text}
-            <sicl-icon name={this.icon} size={'20px'}/>
-          </button>
-        );
-      } else {
-        return (
-          <button class={`btn ${this.type}`} disabled={this.disabled} type="button">
-            <sicl-icon name={this.icon} size={'20px'}/>
-            {this.text}
-          </button>
-        );
-      }
-    } else {
-      return (
-        <button class={`btn ${this.type}`} disabled={this.disabled} type="button">
-          {this.text}
-        </button>
-      );
-    }
+    return (
+      <button class={`btn ${this.type}`} disabled={this.disabled} type="button">
+        {this.iconLeft && <sicl-icon name={this.iconLeft} size={'20px'} />}
+        <slot />
+        {this.iconRight && <sicl-icon name={this.iconRight} size={'20px'} />}
+      </button>
+    );
   }
 }

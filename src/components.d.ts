@@ -8,8 +8,8 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface SiclButton {
         "disabled": boolean;
-        "icon": string;
-        "iconPosition": 'left' | 'right';
+        "iconLeft": string;
+        "iconRight": string;
         "text": string;
         "type": 'primary' | 'secondary' | 'tertiary' | 'warning';
     }
@@ -39,8 +39,8 @@ declare global {
 declare namespace LocalJSX {
     interface SiclButton {
         "disabled"?: boolean;
-        "icon"?: string;
-        "iconPosition"?: 'left' | 'right';
+        "iconLeft"?: string;
+        "iconRight"?: string;
         "text"?: string;
         "type"?: 'primary' | 'secondary' | 'tertiary' | 'warning';
     }
