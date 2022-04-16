@@ -3,37 +3,46 @@
 }
 
 .btn {
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 24px;
+  font-family: $typography_font-family;
+  font-size: $typography_size-body-1;
+  font-weight: $typography_weight-semi-bold;
+  
   &.primary {
-    @include button;
     background: $primary-600;
     color: $primary-100;
 
     &[disabled] {
-      @include button;
       cursor: not-allowed;
       background: $neutral-200;
       color: $neutral-600;
     }
 
     &:focus:not([disabled]) {
-      @include button;
       background: $primary-700;
     }
 
     &:hover:not([disabled]) {
-      @include button;
       background: $primary-700;
       box-shadow: $shadow-small;
     }
   }
 
   &.secondary {
-    @include button;
     background: $secondary-500;
     color: $secondary-100;
 
     &[disabled] {
-      @include button;
       cursor: not-allowed;
       background: none;
       outline: $neutral-300 solid 1px;
@@ -42,48 +51,41 @@
     }
 
     &:focus:not([disabled]) {
-      @include button;
       background: $secondary-600;
     }
 
     &:hover:not([disabled]) {
-      @include button;
       background: $secondary-600;
       box-shadow: $shadow-small;
     }
   }
 
   &.tertiary {
-    @include button;
     background: $primary-100;
     color: $primary-800;
 
     &[disabled] {
-      @include button;
       cursor: not-allowed;
       background: none;
       color: $neutral-400;
     }
 
     &:focus:not([disabled]) {
-      @include button;
       background: $primary-200;
     }
 
     &:hover:not([disabled]) {
-      @include button;
       background: $primary-200;
       box-shadow: $shadow-small;
     }
   }
 
   &.warning {
-    @include button;
+    
     background: $warning-primary;
     color: $primary-100;
 
     &[disabled] {
-      @include button;
       cursor: not-allowed;
       background: none;
       outline: $warning-light solid 1px;
@@ -92,12 +94,10 @@
     }
 
     &:focus:not([disabled]) {
-      @include button;
       background: $warning-dark;
     }
 
     &:hover:not([disabled]) {
-      @include button;
       background: $warning-dark;
       box-shadow: $shadow-small;
     }

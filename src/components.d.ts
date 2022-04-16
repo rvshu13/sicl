@@ -17,6 +17,19 @@ export namespace Components {
         "name": string;
         "size": string;
     }
+    interface SiclInput {
+        "disabled": boolean;
+        "iconLeft": string;
+        "iconRight": string;
+        "inputId": string;
+        "labelText": string;
+        "maxLength": number;
+        "minLength": number;
+        "name": any;
+        "placeholder": any;
+        "required": boolean;
+        "value": string | number | string[];
+    }
 }
 declare global {
     interface HTMLSiclButtonElement extends Components.SiclButton, HTMLStencilElement {
@@ -31,9 +44,16 @@ declare global {
         prototype: HTMLSiclIconElement;
         new (): HTMLSiclIconElement;
     };
+    interface HTMLSiclInputElement extends Components.SiclInput, HTMLStencilElement {
+    }
+    var HTMLSiclInputElement: {
+        prototype: HTMLSiclInputElement;
+        new (): HTMLSiclInputElement;
+    };
     interface HTMLElementTagNameMap {
         "sicl-button": HTMLSiclButtonElement;
         "sicl-icon": HTMLSiclIconElement;
+        "sicl-input": HTMLSiclInputElement;
     }
 }
 declare namespace LocalJSX {
@@ -48,9 +68,23 @@ declare namespace LocalJSX {
         "name"?: string;
         "size"?: string;
     }
+    interface SiclInput {
+        "disabled"?: boolean;
+        "iconLeft"?: string;
+        "iconRight"?: string;
+        "inputId"?: string;
+        "labelText"?: string;
+        "maxLength"?: number;
+        "minLength"?: number;
+        "name"?: any;
+        "placeholder"?: any;
+        "required"?: boolean;
+        "value"?: string | number | string[];
+    }
     interface IntrinsicElements {
         "sicl-button": SiclButton;
         "sicl-icon": SiclIcon;
+        "sicl-input": SiclInput;
     }
 }
 export { LocalJSX as JSX };
@@ -59,6 +93,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "sicl-button": LocalJSX.SiclButton & JSXBase.HTMLAttributes<HTMLSiclButtonElement>;
             "sicl-icon": LocalJSX.SiclIcon & JSXBase.HTMLAttributes<HTMLSiclIconElement>;
+            "sicl-input": LocalJSX.SiclInput & JSXBase.HTMLAttributes<HTMLSiclInputElement>;
         }
     }
 }

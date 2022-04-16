@@ -31,7 +31,6 @@ export class SiclInput {
         <label class="input__label" htmlFor={this.inputId}>
           {this.labelText}
         </label>
-        <div class="input__wrapper">
           {this.iconLeft && <sicl-icon class="input__icon-left" name={this.iconLeft} size={'20px'} />}
           <input
             type="text"
@@ -49,7 +48,6 @@ export class SiclInput {
             disabled={this.disabled}
           />
           {this.iconLeft && <sicl-icon class="input__icon-right" name={this.iconLeft} size={'20px'} />}
-        </div>
       </Host>
     );
   }
