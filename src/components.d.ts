@@ -15,13 +15,14 @@ export namespace Components {
     }
     interface SiclIcon {
         "name": string;
-        "size": string;
+        "size": string | "1em";
     }
     interface SiclInput {
         "disabled": boolean;
         "iconLeft": string;
         "iconRight": string;
         "inputId": string;
+        "inputType": 'text' | 'password';
         "labelText": string;
         "maxLength": number;
         "minLength": number;
@@ -66,13 +67,14 @@ declare namespace LocalJSX {
     }
     interface SiclIcon {
         "name"?: string;
-        "size"?: string;
+        "size"?: string | "1em";
     }
     interface SiclInput {
         "disabled"?: boolean;
         "iconLeft"?: string;
         "iconRight"?: string;
         "inputId"?: string;
+        "inputType"?: 'text' | 'password';
         "labelText"?: string;
         "maxLength"?: number;
         "minLength"?: number;

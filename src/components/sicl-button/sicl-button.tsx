@@ -15,9 +15,9 @@ export class SiclButton {
   render() {
     return (
       <button class={`btn ${this.type}`} disabled={this.disabled} type="button">
-        {this.iconLeft && <sicl-icon name={this.iconLeft} size={'20px'} />}
+        {this.iconLeft.length > 0 && <sicl-icon name={this.iconLeft} size={'20px'}></sicl-icon>}
         <slot />
-        {this.iconRight && <sicl-icon name={this.iconRight} size={'20px'} />}
+        {this.iconRight.length > 0 && <sicl-icon name={this.iconRight} size={'20px'}></sicl-icon>}
       </button>
     );
   }

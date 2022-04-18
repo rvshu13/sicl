@@ -6,7 +6,7 @@ import { Component, Host, h, Prop, State } from '@stencil/core';
   shadow: true,
 })
 export class SiclInput {
-  // TODO: Add input-type property
+  @Prop() inputType: 'text' | 'password' = 'text';
   @Prop() inputId: string;
   @Prop() labelText: string;
   @Prop() value: string | number | string[];
@@ -31,7 +31,8 @@ export class SiclInput {
         <label class="input__label" htmlFor={this.inputId}>
           {this.labelText}
         </label>
-          {this.iconLeft && <sicl-icon class="input__icon-left" name={this.iconLeft} size={'20px'} />}
+        <label class="input__wrapper">
+          {this.iconLeft.length > 0 && <sicl-icon class="input__icon-left" name={this.iconLeft} size={'20px'}></sicl-icon>}
           <input
             type="text"
             class="input__field"
@@ -47,7 +48,8 @@ export class SiclInput {
             {...(!!this.placeholder ? { placeholder: this.placeholder } : {})}
             disabled={this.disabled}
           />
-          {this.iconLeft && <sicl-icon class="input__icon-right" name={this.iconLeft} size={'20px'} />}
+          {this.iconLeft.length > 0 && <sicl-icon class="input__icon-right" name={this.iconLeft} size={'20px'}></sicl-icon>}
+        </label>
       </Host>
     );
   }
