@@ -6,18 +6,18 @@ import { Component, h, Prop } from '@stencil/core';
   shadow: true,
 })
 export class SiclButton {
-  @Prop() text: string;
-  @Prop() iconLeft: string;
-  @Prop() iconRight: string;
-  @Prop() type: 'primary' | 'secondary' | 'tertiary' | 'warning' = 'primary';
+  @Prop() type: string;
+  @Prop() btn: 'primary' | 'secondary' | 'tertiary' | 'warning' = 'primary';
   @Prop() disabled: boolean;
+  @Prop() iconLeft?: string;
+  @Prop() iconRight?: string;
 
   render() {
     return (
-      <button class={`btn ${this.type}`} disabled={this.disabled} type="button">
-        {this.iconLeft.length > 0 && <sicl-icon name={this.iconLeft} size={'20px'}></sicl-icon>}
+      <button class={`btn ${this.btn}`} disabled={this.disabled} type={this.type}>
+        {this.iconLeft && <sicl-icon name={this.iconLeft} size={'20px'}></sicl-icon>}
         <slot />
-        {this.iconRight.length > 0 && <sicl-icon name={this.iconRight} size={'20px'}></sicl-icon>}
+        {this.iconRight && <sicl-icon name={this.iconRight} size={'20px'}></sicl-icon>}
       </button>
     );
   }

@@ -8,18 +8,15 @@ import feather from 'feather-icons';
 })
 export class SiclIcon {
   @Prop() name: string;
-  @Prop() size: string | "1em";
-  
+  @Prop() size: string | '1em';
+
   render() {
     const icon = feather.icons[this.name].toSvg({
       'width': this.size,
       'height': this.size,
-      'stroke-width': 1
+      'stroke-width': 2.08,
     });
 
-    return (
-      <div>{icon}</div>
-    );
+    return <div style={{width: this.size, height: this.size}} innerHTML={icon}></div>;
   }
-
 }

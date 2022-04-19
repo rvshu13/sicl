@@ -7,15 +7,15 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface SiclButton {
+        "btn": 'primary' | 'secondary' | 'tertiary' | 'warning';
         "disabled": boolean;
-        "iconLeft": string;
-        "iconRight": string;
-        "text": string;
-        "type": 'primary' | 'secondary' | 'tertiary' | 'warning';
+        "iconLeft"?: string;
+        "iconRight"?: string;
+        "type": string;
     }
     interface SiclIcon {
         "name": string;
-        "size": string | "1em";
+        "size": string | '1em';
     }
     interface SiclInput {
         "disabled": boolean;
@@ -59,15 +59,15 @@ declare global {
 }
 declare namespace LocalJSX {
     interface SiclButton {
+        "btn"?: 'primary' | 'secondary' | 'tertiary' | 'warning';
         "disabled"?: boolean;
         "iconLeft"?: string;
         "iconRight"?: string;
-        "text"?: string;
-        "type"?: 'primary' | 'secondary' | 'tertiary' | 'warning';
+        "type"?: string;
     }
     interface SiclIcon {
         "name"?: string;
-        "size"?: string | "1em";
+        "size"?: string | '1em';
     }
     interface SiclInput {
         "disabled"?: boolean;

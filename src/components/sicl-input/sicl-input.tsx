@@ -32,7 +32,7 @@ export class SiclInput {
           {this.labelText}
         </label>
         <label class="input__wrapper">
-          {this.iconLeft.length > 0 && <sicl-icon class="input__icon-left" name={this.iconLeft} size={'20px'}></sicl-icon>}
+          {this.iconLeft && <sicl-icon class="input__icon-left" name={this.iconLeft} size={'20px'}></sicl-icon>}
           <input
             type="text"
             class="input__field"
@@ -48,7 +48,7 @@ export class SiclInput {
             {...(!!this.placeholder ? { placeholder: this.placeholder } : {})}
             disabled={this.disabled}
           />
-          {this.iconLeft.length > 0 && <sicl-icon class="input__icon-right" name={this.iconLeft} size={'20px'}></sicl-icon>}
+          {this.iconRight && <sicl-icon class="input__icon-right" name={this.iconRight} size={'20px'}></sicl-icon>}
         </label>
       </Host>
     );
