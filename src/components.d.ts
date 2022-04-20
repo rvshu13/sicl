@@ -13,6 +13,10 @@ export namespace Components {
         "iconRight"?: string;
         "type": string;
     }
+    interface SiclCheckbox {
+        "inputId": string;
+        "labelText": string;
+    }
     interface SiclIcon {
         "name": string;
         "size": string | '1em';
@@ -39,6 +43,12 @@ declare global {
         prototype: HTMLSiclButtonElement;
         new (): HTMLSiclButtonElement;
     };
+    interface HTMLSiclCheckboxElement extends Components.SiclCheckbox, HTMLStencilElement {
+    }
+    var HTMLSiclCheckboxElement: {
+        prototype: HTMLSiclCheckboxElement;
+        new (): HTMLSiclCheckboxElement;
+    };
     interface HTMLSiclIconElement extends Components.SiclIcon, HTMLStencilElement {
     }
     var HTMLSiclIconElement: {
@@ -53,6 +63,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "sicl-button": HTMLSiclButtonElement;
+        "sicl-checkbox": HTMLSiclCheckboxElement;
         "sicl-icon": HTMLSiclIconElement;
         "sicl-input": HTMLSiclInputElement;
     }
@@ -64,6 +75,10 @@ declare namespace LocalJSX {
         "iconLeft"?: string;
         "iconRight"?: string;
         "type"?: string;
+    }
+    interface SiclCheckbox {
+        "inputId"?: string;
+        "labelText"?: string;
     }
     interface SiclIcon {
         "name"?: string;
@@ -85,6 +100,7 @@ declare namespace LocalJSX {
     }
     interface IntrinsicElements {
         "sicl-button": SiclButton;
+        "sicl-checkbox": SiclCheckbox;
         "sicl-icon": SiclIcon;
         "sicl-input": SiclInput;
     }
@@ -94,6 +110,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "sicl-button": LocalJSX.SiclButton & JSXBase.HTMLAttributes<HTMLSiclButtonElement>;
+            "sicl-checkbox": LocalJSX.SiclCheckbox & JSXBase.HTMLAttributes<HTMLSiclCheckboxElement>;
             "sicl-icon": LocalJSX.SiclIcon & JSXBase.HTMLAttributes<HTMLSiclIconElement>;
             "sicl-input": LocalJSX.SiclInput & JSXBase.HTMLAttributes<HTMLSiclInputElement>;
         }

@@ -17,5 +17,14 @@ body {
   margin: 24px;
   padding: 16px;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container .column {
+  margin: 24px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }

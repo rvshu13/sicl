@@ -34,7 +34,7 @@ export class SiclInput {
         <label class="input__wrapper">
           {this.iconLeft && <sicl-icon class="input__icon-left" name={this.iconLeft} size={'20px'}></sicl-icon>}
           <input
-            type="text"
+            type={this.inputType}
             class="input__field"
             value={this.value}
             {...(!!this.name ? { name: this.name } : {})}

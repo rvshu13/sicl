@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Host, Prop } from '@stencil/core';
 
 @Component({
   tag: 'sicl-button',
@@ -14,11 +14,13 @@ export class SiclButton {
 
   render() {
     return (
-      <button class={`btn ${this.btn}`} disabled={this.disabled} type={this.type}>
-        {this.iconLeft && <sicl-icon name={this.iconLeft} size={'20px'}></sicl-icon>}
-        <slot />
-        {this.iconRight && <sicl-icon name={this.iconRight} size={'20px'}></sicl-icon>}
-      </button>
+      <Host>
+        <button class={`btn ${this.btn}`} disabled={this.disabled} type={this.type}>
+          {this.iconLeft && <sicl-icon name={this.iconLeft} size={'20px'}></sicl-icon>}
+          <slot />
+          {this.iconRight && <sicl-icon name={this.iconRight} size={'20px'}></sicl-icon>}
+        </button>
+      </Host>
     );
   }
 }
