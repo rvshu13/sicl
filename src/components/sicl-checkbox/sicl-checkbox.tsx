@@ -1,8 +1,8 @@
 import { Component, Host, h, Prop } from '@stencil/core';
-
 @Component({
   tag: 'sicl-checkbox',
   styleUrl: 'sicl-checkbox.scss',
+  assetsDirs: ['assets'],
   shadow: true,
 })
 export class SiclCheckbox {
