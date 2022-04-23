@@ -20,7 +20,14 @@
   opacity: 0.00001;
 }
 
+.checkbox__wrapper input[type="checkbox"]:hover + svg {
+  .checkbox__box {
+    stroke: $primary-600;
+  }
+}
+
 .checkbox__wrapper svg {
+  cursor: inherit;
   width: 1.3em;
   height: 1.3em;
   box-sizing: border-box;
@@ -34,7 +41,7 @@
   }
 
   * {
-    transition: all 0.12s linear;
+    transition: all 120ms linear;
   }
 }
 

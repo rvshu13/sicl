@@ -1,0 +1,69 @@
+.radio__wrapper {
+  cursor: pointer;
+  color: $neutral-900;
+  font-family: $typography_font-family;
+  font-size: $typography_size-body-2;
+  font-weight: $typography_weight-regular;
+  line-height: $typography_line-height-body-2;
+  display: flex;
+  flex-direction: row;
+  column-gap: 8px;
+  align-items: center;
+}
+
+.radio__wrapper + .radio__wrapper {
+  margin-top: 1em;
+}
+
+.radio__wrapper:focus-within {
+  color: $primary-600;
+}
+
+input[type="radio"] {
+  cursor: inherit;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+
+  font: inherit;
+  color: currentColor;
+  width: 1.125em;
+  height: 1.125em;
+  border: 0.125em solid $primary-400;
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.6250em;
+  height: 0.6250em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em $primary-600;
+  /* Windows High Contrast Mode */
+  background-color: CanvasText;
+}
+
+input[type="radio"]:hover {
+  border-color: $primary-600;
+}
+
+input[type="radio"]:checked::before {
+  border-color: $primary-600;
+  transform: scale(1);
+}
+
+input[type="radio"]:checked {
+  border-color: $primary-600;
+}
+
+input[type="radio"]:focus {
+  outline: max(3px, 0.125em) solid $primary-300; 
+  outline-offset: max(3px, 0.125em);
+}

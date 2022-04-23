@@ -72,13 +72,13 @@
   &:focus-within:not([disabled]) {
     outline: 3px solid transparent;
     background-color: $primary-100;
-    border-color: 2px solid $primary-500;
+    border-color: 2px solid $primary-600;
     box-shadow: $shadow-medium;
   }
 
   &:hover:not([disabled]) {
     background-color: $primary-100;
-    border: 2px solid $primary-500;
+    border: 2px solid $primary-600;
   }
 
   &.warning {

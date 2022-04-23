@@ -35,6 +35,10 @@ export namespace Components {
         "required": boolean;
         "value": string | number | string[];
     }
+    interface SiclRadio {
+        "inputId": string;
+        "labelText": string;
+    }
 }
 declare global {
     interface HTMLSiclButtonElement extends Components.SiclButton, HTMLStencilElement {
@@ -61,11 +65,18 @@ declare global {
         prototype: HTMLSiclInputElement;
         new (): HTMLSiclInputElement;
     };
+    interface HTMLSiclRadioElement extends Components.SiclRadio, HTMLStencilElement {
+    }
+    var HTMLSiclRadioElement: {
+        prototype: HTMLSiclRadioElement;
+        new (): HTMLSiclRadioElement;
+    };
     interface HTMLElementTagNameMap {
         "sicl-button": HTMLSiclButtonElement;
         "sicl-checkbox": HTMLSiclCheckboxElement;
         "sicl-icon": HTMLSiclIconElement;
         "sicl-input": HTMLSiclInputElement;
+        "sicl-radio": HTMLSiclRadioElement;
     }
 }
 declare namespace LocalJSX {
@@ -98,11 +109,16 @@ declare namespace LocalJSX {
         "required"?: boolean;
         "value"?: string | number | string[];
     }
+    interface SiclRadio {
+        "inputId"?: string;
+        "labelText"?: string;
+    }
     interface IntrinsicElements {
         "sicl-button": SiclButton;
         "sicl-checkbox": SiclCheckbox;
         "sicl-icon": SiclIcon;
         "sicl-input": SiclInput;
+        "sicl-radio": SiclRadio;
     }
 }
 export { LocalJSX as JSX };
@@ -113,6 +129,7 @@ declare module "@stencil/core" {
             "sicl-checkbox": LocalJSX.SiclCheckbox & JSXBase.HTMLAttributes<HTMLSiclCheckboxElement>;
             "sicl-icon": LocalJSX.SiclIcon & JSXBase.HTMLAttributes<HTMLSiclIconElement>;
             "sicl-input": LocalJSX.SiclInput & JSXBase.HTMLAttributes<HTMLSiclInputElement>;
+            "sicl-radio": LocalJSX.SiclRadio & JSXBase.HTMLAttributes<HTMLSiclRadioElement>;
         }
     }
 }
