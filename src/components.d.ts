@@ -14,8 +14,13 @@ export namespace Components {
         "type": string;
     }
     interface SiclCheckbox {
+        "checked": boolean;
+        "disabled": boolean;
+        "indeterminate": boolean;
         "inputId": string;
-        "labelText": string;
+        "labelText"?: string;
+        "name": string;
+        "required": boolean;
     }
     interface SiclIcon {
         "name": string;
@@ -36,8 +41,14 @@ export namespace Components {
         "value": string | number | string[];
     }
     interface SiclRadio {
+        "checked": boolean;
+        "disabled": boolean;
+        "emitCheckedChange": () => Promise<void>;
+        "guid": string;
         "inputId": string;
-        "labelText": string;
+        "labelText"?: string;
+        "name": string;
+        "required": boolean;
     }
 }
 declare global {
@@ -88,8 +99,14 @@ declare namespace LocalJSX {
         "type"?: string;
     }
     interface SiclCheckbox {
+        "checked"?: boolean;
+        "disabled"?: boolean;
+        "indeterminate"?: boolean;
         "inputId"?: string;
         "labelText"?: string;
+        "name"?: string;
+        "onSiclCheckboxChange"?: (event: CustomEvent<any>) => void;
+        "required"?: boolean;
     }
     interface SiclIcon {
         "name"?: string;
@@ -110,8 +127,15 @@ declare namespace LocalJSX {
         "value"?: string | number | string[];
     }
     interface SiclRadio {
+        "checked"?: boolean;
+        "disabled"?: boolean;
+        "guid"?: string;
         "inputId"?: string;
         "labelText"?: string;
+        "name"?: string;
+        "onSiclInternalRadioCheckedChange"?: (event: CustomEvent<any>) => void;
+        "onSiclRadioChange"?: (event: CustomEvent<any>) => void;
+        "required"?: boolean;
     }
     interface IntrinsicElements {
         "sicl-button": SiclButton;

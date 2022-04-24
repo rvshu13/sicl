@@ -1,21 +1,22 @@
 .radio__wrapper {
   cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  column-gap: 8px;
+  align-items: center;
+
   color: $neutral-900;
   font-family: $typography_font-family;
   font-size: $typography_size-body-2;
   font-weight: $typography_weight-regular;
   line-height: $typography_line-height-body-2;
-  display: flex;
-  flex-direction: row;
-  column-gap: 8px;
-  align-items: center;
+
+  * {
+    transition: all 120ms linear;
+  }
 }
 
-.radio__wrapper + .radio__wrapper {
-  margin-top: 1em;
-}
-
-.radio__wrapper:focus-within {
+.radio__wrapper input[type="radio"]:focus-within {
   color: $primary-600;
 }
 
@@ -25,29 +26,30 @@ input[type="radio"] {
   appearance: none;
   background-color: #fff;
   margin: 0;
+  flex-shrink: 0;
 
   font: inherit;
   color: currentColor;
-  width: 1.125em;
-  height: 1.125em;
-  border: 0.125em solid $primary-400;
+  width: 18px;
+  height: 18px;
+  border: 2px solid $primary-400;
   border-radius: 50%;
   transform: translateY(-0.075em);
 
-  display: grid;
-  place-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 input[type="radio"]::before {
   content: "";
-  width: 0.6250em;
-  height: 0.6250em;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   transform: scale(0);
-  transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em $primary-600;
-  /* Windows High Contrast Mode */
-  background-color: CanvasText;
+  transition: 100ms transform ease-in-out;
+  background-color: $primary-600;
+  //box-shadow: inset 10px 10px $primary-600;
 }
 
 input[type="radio"]:hover {
@@ -64,6 +66,26 @@ input[type="radio"]:checked {
 }
 
 input[type="radio"]:focus {
-  outline: max(3px, 0.125em) solid $primary-300; 
-  outline-offset: max(3px, 0.125em);
+  outline: max(3px, 2px) solid $primary-300; 
+  outline-offset: max(3px, 2px);
+}
+
+input[type='radio']:focus:not(:focus-visible) {
+  outline: none;
+}
+
+input[type='radio']:disabled {
+  cursor: not-allowed;
+  border-color: $neutral-700;
+  background-color: $neutral-300;
+
+  &::before {
+    box-shadow: insert 1;
+    background-color: $neutral-700;
+  }
+
+  & ~ .radio__label {
+    cursor: default;
+    color: $neutral-600;
+  }
 }
