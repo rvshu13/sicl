@@ -1,4 +1,4 @@
-import { Component, h, Host, Prop } from '@stencil/core';
+import { Component, h, Host, Prop, Element } from '@stencil/core';
 
 @Component({
   tag: 'sicl-button',
@@ -6,19 +6,52 @@ import { Component, h, Host, Prop } from '@stencil/core';
   shadow: true,
 })
 export class SiclButton {
-  @Prop() type: string;
-  @Prop() btn: 'primary' | 'secondary' | 'tertiary' | 'warning' = 'primary';
-  @Prop() disabled: boolean;
+  @Element() el: HTMLSiclButtonElement;
+
+  @Prop() type: string = 'button';
+  @Prop() class: 'primary' | 'secondary' | 'tertiary' | 'warning' = 'primary';
+  @Prop() disabled: boolean = false;
+  @Prop() name?: string;
   @Prop() iconLeft?: string;
   @Prop() iconRight?: string;
+
+  formEl: HTMLFormElement;
+
+  iconLeftEl = () => {
+    if (this.iconLeft) {
+      return <sicl-icon name={this.iconLeft} size={'20px'}></sicl-icon>;
+    }
+  }
+
+  iconRightEl = () => {
+    if (this.iconRight) {
+      return <sicl-icon name={this.iconRight} size={'20px'}></sicl-icon>;
+    }
+  }    
+
+  private handleClick = (): void => {
+    const { formEl, type } = this;  
+
+    // this.type refers to type attribute, not child element type
+    if (type === "submit") {
+      formEl?.requestSubmit();
+    } else if (type === "reset") {
+      formEl?.reset();
+    }
+  };
 
   render() {
     return (
       <Host>
-        <button class={`btn ${this.btn}`} disabled={this.disabled} type={this.type}>
-          {this.iconLeft && <sicl-icon name={this.iconLeft} size={'20px'}></sicl-icon>}
+        <button 
+          class={`btn ${this.class}`} 
+          disabled={this.disabled} type={this.type}
+          name={this.name}
+          onClick = {this.handleClick}
+        >
+          {this.iconLeftEl()}
           <slot />
-          {this.iconRight && <sicl-icon name={this.iconRight} size={'20px'}></sicl-icon>}
+          {this.iconRightEl()}
         </button>
       </Host>
     );

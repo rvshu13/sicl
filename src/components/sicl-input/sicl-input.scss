@@ -34,20 +34,28 @@
   font-weight: $typography_weight-regular;
   color: $neutral-900;
 
-  ::-webkit-input-placeholder {
-      color:red;
+  &::-webkit-input-placeholder {
+    color: $neutral-200;
+    font-weight: $typography_weight-semi-bold;
+    opacity: 1;
   }
 
-  ::-moz-placeholder {
-      color:red;
+  &::-moz-placeholder {
+    color: $neutral-200;
+    font-weight: $typography_weight-semi-bold;
+    opacity: 1;
   }
 
-  ::-ms-placeholder {
-      color:red;
+  &::-ms-placeholder {
+    color: $neutral-200;
+    font-weight: $typography_weight-semi-bold;
+    opacity: 1;
   }
 
-  ::placeholder {
-      color:red;
+  &::placeholder {
+    color: $neutral-200;
+    font-weight: $typography_weight-semi-bold;
+    opacity: 1;
   }
 }
 
@@ -60,7 +68,7 @@
   padding: 12px 16px;
   border-radius: 16px;
   border: 2px solid $primary-500;
-  transition: 180ms box-shadow ease-in-out;
+  transition: 180ms box-shadow ease-out;
   cursor: text;
 
   &[disabled] {

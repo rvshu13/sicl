@@ -1,4 +1,4 @@
-import { Component, Element, Event, EventEmitter, h, Method, Prop, Watch } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, h, Host, Method, Prop, Watch } from '@stencil/core';
 
 @Component({
   tag: 'sicl-radio',
@@ -21,7 +21,14 @@ export class SiclRadio {
   @Prop({ reflect: true }) required = false;
   @Prop({ reflect: true }) disabled = false;
   @Prop() inputId: string;
+  @Prop() value: string;
   @Prop({ reflect: true }) name: string;
+
+  @Watch("name")
+  nameChanged(): void {
+    this.checkLastRadio();
+  }
+
   @Prop({ reflect: true, mutable: true }) guid: string;
   @Prop() labelText?: string;
   
@@ -31,6 +38,22 @@ export class SiclRadio {
   @Event() siclInternalRadioCheckedChange: EventEmitter;
   @Event() siclRadioChange: EventEmitter;
 
+  private checkLastRadio(): void {
+    const radios = this.queryRadios();
+    const checkedRadios = radios.filter((radioButton) => radioButton.checked);
+
+    if (checkedRadios?.length > 1) {
+      const lastCheckedRadio = checkedRadios[checkedRadios.length - 1];
+      checkedRadios
+        .filter((checkedRadio) => checkedRadio !== lastCheckedRadio)
+        .forEach((checkedRadio: HTMLSiclRadioElement) => {
+          checkedRadio.checked = false;
+          checkedRadio.emitCheckedChange();
+        });
+    }
+  }
+
+  /** @internal */
   @Method()
   async emitCheckedChange(): Promise<void> {
     this.siclInternalRadioCheckedChange.emit();
@@ -74,19 +97,29 @@ export class SiclRadio {
     this.check();
   };
 
+  connectedCallback(): void {
+    this.rootNode = this.el.getRootNode() as HTMLElement;
+    this.guid = this.el.id || `sicl-radio-${Math.random()}`;
+    if (this.name) {
+      this.checkLastRadio();
+    }
+  }
+
   render() {
     return (
-      <label class="radio__wrapper">
-        <input 
-          class="radio__input" 
-          type="radio" 
-          id={this.inputId} 
-          onClick={this.clickHandler}
-          checked={this.checked}
-          disabled={this.disabled}
-        ></input>
-        {this.labelText && <span class="radio__label">{this.labelText}</span>}
-      </label>
+      <Host>
+        <label class="radio__wrapper">
+          <input 
+            class="radio__input" 
+            type="radio" 
+            id={this.inputId} 
+            onClick={this.clickHandler}
+            checked={this.checked}
+            disabled={this.disabled}
+          ></input>
+          {this.labelText && <span class="radio__label">{this.labelText}</span>}
+        </label>
+      </Host>
     );
   }
 }

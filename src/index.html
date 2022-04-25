@@ -11,28 +11,28 @@
   <body>
     <div class="container">
       <div class="row">
-        <sicl-button btn="primary" type="button">Button</sicl-button>
-        <sicl-button btn="secondary" type="button">Button</sicl-button>
-        <sicl-button btn="tertiary" type="button">Button</sicl-button>
-        <sicl-button btn="warning" type="button">Button</sicl-button>
+        <sicl-button class="primary" type="button">Button</sicl-button>
+        <sicl-button class="secondary" type="button">Button</sicl-button>
+        <sicl-button class="tertiary" type="button">Button</sicl-button>
+        <sicl-button class="warning" type="button">Button</sicl-button>
       </div>
       <div class="row">
-        <sicl-button btn="primary" type="button" icon-left="search">Button</sicl-button>
-        <sicl-button btn="secondary" type="button" icon-left="arrow-left">Button</sicl-button>
-        <sicl-button btn="tertiary" type="button" icon-left="help-circle">Button</sicl-button>
-        <sicl-button btn="warning" type="button" icon-left="trash-2">Button</sicl-button>
+        <sicl-button class="primary" type="button" icon-left="search">Button</sicl-button>
+        <sicl-button class="secondary" type="button" icon-left="arrow-left">Button</sicl-button>
+        <sicl-button class="tertiary" type="button" icon-left="help-circle">Button</sicl-button>
+        <sicl-button class="warning" type="button" icon-left="trash-2">Button</sicl-button>
       </div>
       <div class="row">
-        <sicl-button btn="primary" type="button" icon-right="search">Button</sicl-button>
-        <sicl-button btn="secondary" type="button" icon-right="arrow-left">Button</sicl-button>
-        <sicl-button btn="tertiary" type="button" icon-right="help-circle">Button</sicl-button>
-        <sicl-button btn="warning" type="button" icon-right="trash-2">Button</sicl-button>
+        <sicl-button class="primary" type="button" icon-right="search">Button</sicl-button>
+        <sicl-button class="secondary" type="button" icon-right="arrow-left">Button</sicl-button>
+        <sicl-button class="tertiary" type="button" icon-right="help-circle">Button</sicl-button>
+        <sicl-button class="warning" type="button" icon-right="trash-2">Button</sicl-button>
       </div>
       <div class="row">
-        <sicl-button btn="primary" type="button" disabled>Button</sicl-button>
-        <sicl-button btn="secondary" type="button" disabled>Button</sicl-button>
-        <sicl-button btn="tertiary" type="button" disabled>Button</sicl-button>
-        <sicl-button btn="warning" type="button" disabled>Button</sicl-button>
+        <sicl-button class="primary" type="button" disabled>Button</sicl-button>
+        <sicl-button class="secondary" type="button" disabled>Button</sicl-button>
+        <sicl-button class="tertiary" type="button" disabled>Button</sicl-button>
+        <sicl-button class="warning" type="button" disabled>Button</sicl-button>
       </div>
       <div class="row">
         <sicl-input type="text" placeholder="Placeholder" label-text="Default"></sicl-input>
@@ -47,12 +47,14 @@
           <sicl-checkbox label-text="Disabled" disabled></sicl-checkbox>
           <sicl-checkbox label-text="Disabled & checked" disabled checked></sicl-checkbox>
         </div>
-        <div class="column">
-          <sicl-radio label-text="Default"></sicl-radio>
-          <sicl-radio label-text="Checked" checked></sicl-radio>
+        <sicl-radio-group name="options">
+          <sicl-radio label-text="Option 1"></sicl-radio>
+          <sicl-radio label-text="Option 2"></sicl-radio>
+          <sicl-radio label-text="Option 3"></sicl-radio>
+          <sicl-radio label-text="Option 4"></sicl-radio>
           <sicl-radio label-text="Disabled" disabled></sicl-radio>
           <sicl-radio label-text="Disabled & checked" disabled checked></sicl-radio>
-        </div>
+        </sicl-radio-group>
       </div>
     </div>
   </body>

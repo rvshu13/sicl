@@ -7,10 +7,11 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface SiclButton {
-        "btn": 'primary' | 'secondary' | 'tertiary' | 'warning';
+        "class": 'primary' | 'secondary' | 'tertiary' | 'warning';
         "disabled": boolean;
         "iconLeft"?: string;
         "iconRight"?: string;
+        "name"?: string;
         "type": string;
     }
     interface SiclCheckbox {
@@ -49,6 +50,12 @@ export namespace Components {
         "labelText"?: string;
         "name": string;
         "required": boolean;
+        "value": string;
+    }
+    interface SiclRadioGroup {
+        "disabled": boolean;
+        "name": string;
+        "required": boolean;
     }
 }
 declare global {
@@ -82,20 +89,28 @@ declare global {
         prototype: HTMLSiclRadioElement;
         new (): HTMLSiclRadioElement;
     };
+    interface HTMLSiclRadioGroupElement extends Components.SiclRadioGroup, HTMLStencilElement {
+    }
+    var HTMLSiclRadioGroupElement: {
+        prototype: HTMLSiclRadioGroupElement;
+        new (): HTMLSiclRadioGroupElement;
+    };
     interface HTMLElementTagNameMap {
         "sicl-button": HTMLSiclButtonElement;
         "sicl-checkbox": HTMLSiclCheckboxElement;
         "sicl-icon": HTMLSiclIconElement;
         "sicl-input": HTMLSiclInputElement;
         "sicl-radio": HTMLSiclRadioElement;
+        "sicl-radio-group": HTMLSiclRadioGroupElement;
     }
 }
 declare namespace LocalJSX {
     interface SiclButton {
-        "btn"?: 'primary' | 'secondary' | 'tertiary' | 'warning';
+        "class"?: 'primary' | 'secondary' | 'tertiary' | 'warning';
         "disabled"?: boolean;
         "iconLeft"?: string;
         "iconRight"?: string;
+        "name"?: string;
         "type"?: string;
     }
     interface SiclCheckbox {
@@ -136,6 +151,13 @@ declare namespace LocalJSX {
         "onSiclInternalRadioCheckedChange"?: (event: CustomEvent<any>) => void;
         "onSiclRadioChange"?: (event: CustomEvent<any>) => void;
         "required"?: boolean;
+        "value"?: string;
+    }
+    interface SiclRadioGroup {
+        "disabled"?: boolean;
+        "name": string;
+        "onSiclRadioGroupChange"?: (event: CustomEvent<any>) => void;
+        "required"?: boolean;
     }
     interface IntrinsicElements {
         "sicl-button": SiclButton;
@@ -143,6 +165,7 @@ declare namespace LocalJSX {
         "sicl-icon": SiclIcon;
         "sicl-input": SiclInput;
         "sicl-radio": SiclRadio;
+        "sicl-radio-group": SiclRadioGroup;
     }
 }
 export { LocalJSX as JSX };
@@ -154,6 +177,7 @@ declare module "@stencil/core" {
             "sicl-icon": LocalJSX.SiclIcon & JSXBase.HTMLAttributes<HTMLSiclIconElement>;
             "sicl-input": LocalJSX.SiclInput & JSXBase.HTMLAttributes<HTMLSiclInputElement>;
             "sicl-radio": LocalJSX.SiclRadio & JSXBase.HTMLAttributes<HTMLSiclRadioElement>;
+            "sicl-radio-group": LocalJSX.SiclRadioGroup & JSXBase.HTMLAttributes<HTMLSiclRadioGroupElement>;
         }
     }
 }
