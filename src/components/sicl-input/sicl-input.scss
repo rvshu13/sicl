@@ -34,25 +34,7 @@
   font-weight: $typography_weight-regular;
   color: $neutral-900;
 
-  &::-webkit-input-placeholder {
-    color: $neutral-200;
-    font-weight: $typography_weight-semi-bold;
-    opacity: 1;
-  }
-
-  &::-moz-placeholder {
-    color: $neutral-200;
-    font-weight: $typography_weight-semi-bold;
-    opacity: 1;
-  }
-
-  &::-ms-placeholder {
-    color: $neutral-200;
-    font-weight: $typography_weight-semi-bold;
-    opacity: 1;
-  }
-
-  &::placeholder {
+  @include input-placeholder {
     color: $neutral-200;
     font-weight: $typography_weight-semi-bold;
     opacity: 1;
