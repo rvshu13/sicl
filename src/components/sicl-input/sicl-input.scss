@@ -34,7 +34,7 @@
   font-weight: $typography_weight-regular;
   color: $neutral-900;
 
-  @include input-placeholder {
+  @include placeholder {
     color: $neutral-200;
     font-weight: $typography_weight-semi-bold;
     opacity: 1;

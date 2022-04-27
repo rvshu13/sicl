@@ -1,4 +1,8 @@
-/* Primary */
+/**
+ * Tokens - universal, above the theme
+ */
+
+// Primary
 $primary-900: hsl(274, 40%, 10%);
 $primary-800: hsl(274, 40%, 20%);
 $primary-700: hsl(274, 40%, 36%);
@@ -9,7 +13,7 @@ $primary-300: hsl(274, 50%, 80%);
 $primary-200: hsl(274, 40%, 88%);
 $primary-100: hsl(274, 40%, 96%);
 
-/* Secondary */
+// Secondary
 $secondary-900: hsl(234, 38%, 10%);
 $secondary-800: hsl(234, 38%, 15%);
 $secondary-700: hsl(234, 38%, 38%);
@@ -20,7 +24,7 @@ $secondary-300: hsl(234, 38%, 80%);
 $secondary-200: hsl(234, 38%, 88%);
 $secondary-100: hsl(234, 38%, 96%);
 
-/* Neutral */
+// Neutral
 $neutral-900: hsl(274, 5%, 2%);
 $neutral-800: hsl(274, 5%, 12%);
 $neutral-700: hsl(274, 5%, 28%);
@@ -30,53 +34,127 @@ $neutral-400: hsl(274, 5%, 62%);
 $neutral-300: hsl(274, 5%, 72%);
 $neutral-200: hsl(274, 5%, 82%);
 $neutral-100: hsl(274, 5%, 92%);
+$neutral-50: hsl(274, 5%, 98%);
 
-/* Warning */
+// Warning
 $warning-dark: hsl(0, 70%, 40%);
 $warning-primary: hsl(0, 70%, 50%);
 $warning-light: hsl(0, 80%, 70%);
 
-/* Black & White */
+// Black & White
 $black: hsl(0, 0%, 0%);
 $white: hsl(0, 0%, 100%);
 
-/* Opacity Light */
+// Opacity Light
 $opacity-light-primary: hsla(274, 40%, 50%, 0.1);
 $opacity-light-secondary: hsla(274, 40%, 50%, 0.18);
 
-/* Opacity Dark */
+// Opacity Dark
 $opacity-dark-primary: hsla(274, 50%, 70%, 0.1);
 $opacity-dark-secondary: hsla(234, 20%, 80%, 0.2);
 
-/* Font family */
+// Font family
 $typography_font-family: 'Inter';
 
-/* Font weight */
-$typography_weight-regular: 400;
-$typography_weight-medium: 500;
-$typography_weight-semi-bold: 600;
-$typography_weight-bold: 700;
-$typography_weight-extra-bold: 800;
+// Font weight
+$typography-weight-regular: 400;
+$typography-weight-medium: 500;
+$typography-weight-semi-bold: 600;
+$typography-weight-bold: 700;
+$typography-weight-extra-bold: 800;
 
-/* Font style size */
-$typography_size-header-1: 60px;
-$typography_size-header-2: 48px;
-$typography_size-header-3: 40px;
-$typography_size-subtitle-1: 28px;
-$typography_size-subtitle-2: 18px;
-$typography_size-body-1: 18px;
-$typography_size-body-2: 16px;
+// Font style size
+$typography-size-header-1: 60px;
+$typography-size-header-2: 48px;
+$typography-size-header-3: 40px;
+$typography-size-subtitle-1: 28px;
+$typography-size-subtitle-2: 18px;
+$typography-size-body-1: 18px;
+$typography-size-body-2: 16px;
 
-/* Font style line height */
-$typography_line-height-header-1: 1.2;
-$typography_line-height-header-2: 1.33;
-$typography_line-height-header-3: 1.2;
-$typography_line-height-subtitle-1: 1.43;
-$typography_line-height-subtitle-2: 1.56;
-$typography_line-height-body-1: 1.56;
-$typography_line-height-body-2: 1.5;
+// Font style line height
+$typography-line-height-header-1: 1.2;
+$typography-line-height-header-2: 1.33;
+$typography-line-height-header-3: 1.2;
+$typography-line-height-subtitle-1: 1.43;
+$typography-line-height-subtitle-2: 1.56;
+$typography-line-height-body-1: 1.56;
+$typography-line-height-body-2: 1.5;
 
-/* Shadows */
-$shadow-small: 0px 1px 2px hsla(0, 0%, 0%, 0.3), 0px 1px 3px 1px hsla(0, 0%, 0%, 0.15);
-$shadow-medium: 0px 4px 8px 3px hsla(0, 0%, 0%, 0.15), 0px 1px 3px hsla(0, 0%, 0%, 0.3);
-$shadow-large: 0px 8px 12px 6px hsla(0, 0%, 0%, 0.15), 0px 4px 4px hsla(0, 0%, 0%, 0.3);
+// Shadows
+$shadow-small:  0px 1px 2px 0px     hsla(0, 0%, 0%, 0.3),   0px 1px 3px 1px     hsla(0, 0%, 0%, 0.15);
+$shadow-medium: 0px 4px 8px 3px     hsla(0, 0%, 0%, 0.15),  0px 1px 3px 0px     hsla(0, 0%, 0%, 0.3);
+$shadow-large:  0px 8px 12px 6px    hsla(0, 0%, 0%, 0.15),  0px 4px 4px 0px     hsla(0, 0%, 0%, 0.3);
+
+// Auras
+$aura-small:  0px 1px 2px 0px     hsla(0, 0%, 87%, 0.3),  0px 1px 3px 1px     hsla(0, 0%, 87%, 0.15);
+$aura-medium: 0px 4px 8px 3px     hsla(0, 0%, 87%, 0.15), 0px 1px 3px 0px     hsla(0, 0%, 87%, 0.3);
+$aura-large:  0px 8px 12px 6px    hsla(0, 0%, 87%, 0.15), 0px 4px 4px 0px     hsla(0, 0%, 87%, 0.3);
+
+/**
+ * Light theme
+ */
+// General
+$light-background-color: $neutral-50;
+
+// Notes box - not used right now (only internally in Figma), but could be used in the future
+$light-box-background-color: $neutral-100;
+$light-box-text-color: $neutral-700;
+
+// Text
+$light-text-header-color: $neutral-900;
+$light-text-subtitle-color: $neutral-700;
+$light-text-paragraph-color: $neutral-800;
+
+// Button
+$light-button-hover-effect: $shadow-small;
+
+$light-button-primary-background-color: $primary-600;
+$light-button-primary-focused-background-color: $primary-700;
+$light-button-primary-disabled-background-color: $neutral-200;
+$light-button-primary-color: $primary-100;
+$light-button-primary-disabled-color: $primary-600;
+
+$light-button-secondary-background-color: $secondary-500;
+$light-button-secondary-focused-background-color: $secondary-600;
+$light-button-secondary-disabled-background-color: $neutral-50;
+$light-button-secondary-color: $secondary-100;
+$light-button-secondary-disabled-color: $neutral-400;
+$light-button-secondary-disabled-border-color: $neutral-300;
+
+$light-button-tertiary-background-color: $primary-200;
+$light-button-tertiary-focused-background-color: $primary-300;
+$light-button-tertiary-disabled-background-color: $neutral-50;
+$light-button-tertiary-color: $primary-800;
+$light-button-tertiary-disabled-color: $neutral-400;
+
+$light-button-warning-background-color: $warning-primary;
+$light-button-warning-focused-background-color: $warning-dark;
+$light-button-warning-disabled-background-color: $neutral-50;
+$light-button-warning-color: $primary-100;
+$light-button-warning-disabled-color: $warning-light;
+$light-button-warning-disabled-border-color: $warning-light;
+
+// Input
+$light-input-hover-effect: $shadow-small;
+
+$light-input-background-color: $neutral-50; // TODO: apply in Figma, no fill in system
+$light-input-focused-background-color: $primary-100;
+$light-input-placeholder-color: $neutral-300;
+$light-input-color: $neutral-900;
+$light-input-label-color: $neutral-700;
+
+$light-input-disabled-background-color: $neutral-100;
+$light-input-disabled-border-color: $neutral-500;
+
+$light-input-default-border-color: $primary-500;
+$light-input-default-focused-border-color: $primary-600;
+$light-input-default-left-icon-color: $neutral-700;
+$light-input-default-right-icon-color: $light-input-default-border-color;
+$light-input-default-right-icon-focused-color: $light-input-default-focused-border-color;
+
+$light-input-warning-border-color: $warning-light;
+$light-input-warning-focused-border-color: $warning-primary;
+$light-input-warning-left-icon-color: $neutral-700;
+$light-input-warning-right-icon-color: $light-input-warning-border-color;
+$light-input-warning-right-icon-focused-color: $light-input-warning-focused-border-color;
