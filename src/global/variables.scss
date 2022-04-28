@@ -139,9 +139,9 @@ $light-button-warning-disabled-border-color: $warning-light;
 $light-input-hover-effect: $shadow-small;
 
 $light-input-background-color: $neutral-50; // TODO: apply in Figma, no fill in system
+$light-input-color: $neutral-900;
 $light-input-focused-background-color: $primary-100;
 $light-input-placeholder-color: $neutral-300;
-$light-input-color: $neutral-900;
 $light-input-label-color: $neutral-700;
 
 $light-input-disabled-background-color: $neutral-100;
@@ -158,3 +158,23 @@ $light-input-warning-focused-border-color: $warning-primary;
 $light-input-warning-left-icon-color: $neutral-700;
 $light-input-warning-right-icon-color: $light-input-warning-border-color;
 $light-input-warning-right-icon-focused-color: $light-input-warning-focused-border-color;
+
+// Checkbox
+$light-checkbox-background-color: $neutral-50;
+$light-checkbox-color: $neutral-900;
+$light-checkbox-outline-color: $primary-300;
+$light-checkbox-default-check-color: $primary-100;
+
+$light-checkbox-default-border-color: $primary-400;
+$light-checkbox-default-focused-background-color: $primary-100;
+$light-checkbox-default-focused-border-color: $primary-600;
+$light-checkbox-default-checked-background-color: $primary-600;
+$light-checkbox-default-checked-border-color: $primary-600;
+
+$light-checkbox-warning-border-color: $warning-light;
+$light-checkbox-warning-focused-background-color: $warning-primary;
+$light-checkbox-warning-focused-border-color: $warning-primary;
+
+$light-checkbox-disabled-background-color: $neutral-300;
+$light-checkbox-disabled-border-color: $neutral-700;
+$light-checkbox-disabled-color: $neutral-600;
