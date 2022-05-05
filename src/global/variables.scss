@@ -41,6 +41,11 @@ $warning-dark: hsl(0, 70%, 40%);
 $warning-primary: hsl(0, 70%, 50%);
 $warning-light: hsl(0, 80%, 70%);
 
+// Success
+$success-dark: hsl(126, 60%, 28%);
+$success-primary: hsl(126, 60%, 38%);
+$success-light: hsl(126, 60%, 58%);
+
 // Black & White
 $black: hsl(0, 0%, 0%);
 $white: hsl(0, 0%, 100%);
@@ -82,99 +87,244 @@ $typography-line-height-body-1: 1.56;
 $typography-line-height-body-2: 1.5;
 
 // Shadows
-$shadow-small:  0px 1px 2px 0px     hsla(0, 0%, 0%, 0.3),   0px 1px 3px 1px     hsla(0, 0%, 0%, 0.15);
-$shadow-medium: 0px 4px 8px 3px     hsla(0, 0%, 0%, 0.15),  0px 1px 3px 0px     hsla(0, 0%, 0%, 0.3);
-$shadow-large:  0px 8px 12px 6px    hsla(0, 0%, 0%, 0.15),  0px 4px 4px 0px     hsla(0, 0%, 0%, 0.3);
+$shadow-small: 0px 1px 2px 0px hsla(0, 0%, 0%, 0.3), 0px 1px 3px 1px hsla(0, 0%, 0%, 0.15);
+$shadow-medium: 0px 4px 8px 3px hsla(0, 0%, 0%, 0.15), 0px 1px 3px 0px hsla(0, 0%, 0%, 0.3);
+$shadow-large: 0px 8px 12px 6px hsla(0, 0%, 0%, 0.15), 0px 4px 4px 0px hsla(0, 0%, 0%, 0.3);
 
 // Auras
-$aura-small:  0px 1px 2px 0px     hsla(0, 0%, 87%, 0.3),  0px 1px 3px 1px     hsla(0, 0%, 87%, 0.15);
-$aura-medium: 0px 4px 8px 3px     hsla(0, 0%, 87%, 0.15), 0px 1px 3px 0px     hsla(0, 0%, 87%, 0.3);
-$aura-large:  0px 8px 12px 6px    hsla(0, 0%, 87%, 0.15), 0px 4px 4px 0px     hsla(0, 0%, 87%, 0.3);
+$aura-small: 0px 1px 2px 0px hsla(0, 0%, 87%, 0.3), 0px 1px 3px 1px hsla(0, 0%, 87%, 0.15);
+$aura-medium: 0px 4px 8px 3px hsla(0, 0%, 87%, 0.15), 0px 1px 3px 0px hsla(0, 0%, 87%, 0.3);
+$aura-large: 0px 8px 12px 6px hsla(0, 0%, 87%, 0.15), 0px 4px 4px 0px hsla(0, 0%, 87%, 0.3);
 
 /**
  * Light theme
  */
-// General
-$light-background-color: $neutral-50;
+:root {
+  // General
+  $background-color: $neutral-50;
 
-// Notes box - not used right now (only internally in Figma), but could be used in the future
-$light-box-background-color: $neutral-100;
-$light-box-text-color: $neutral-700;
+  // Notes box - not used right now (only internally in Figma), but could be used in the future
+  $box-background-color: $neutral-100;
+  $box-text-color: $neutral-700;
 
-// Text
-$light-text-header-color: $neutral-900;
-$light-text-subtitle-color: $neutral-700;
-$light-text-paragraph-color: $neutral-800;
+  // Text
+  $text-header-color: $neutral-900;
+  $text-subtitle-color: $neutral-700;
+  $text-paragraph-color: $neutral-800;
 
-// Button
-$light-button-hover-effect: $shadow-small;
+  // Button
+  $button-hover-effect: $shadow-small;
 
-$light-button-primary-background-color: $primary-600;
-$light-button-primary-focused-background-color: $primary-700;
-$light-button-primary-disabled-background-color: $neutral-200;
-$light-button-primary-color: $primary-100;
-$light-button-primary-disabled-color: $primary-600;
+  $button-primary-background-color: $primary-600;
+  $button-primary-focused-background-color: $primary-700;
+  $button-primary-disabled-background-color: $neutral-200;
+  $button-primary-text-color: $primary-100;
+  $button-primary-disabled-color: $primary-600;
 
-$light-button-secondary-background-color: $secondary-500;
-$light-button-secondary-focused-background-color: $secondary-600;
-$light-button-secondary-disabled-background-color: $neutral-50;
-$light-button-secondary-color: $secondary-100;
-$light-button-secondary-disabled-color: $neutral-400;
-$light-button-secondary-disabled-border-color: $neutral-300;
+  $button-secondary-background-color: $secondary-500;
+  $button-secondary-focused-background-color: $secondary-600;
+  $button-secondary-disabled-background-color: $neutral-50;
+  $button-secondary-text-color: $secondary-100;
+  $button-secondary-disabled-color: $neutral-400;
+  $button-secondary-disabled-border-color: $neutral-300;
 
-$light-button-tertiary-background-color: $primary-200;
-$light-button-tertiary-focused-background-color: $primary-300;
-$light-button-tertiary-disabled-background-color: $neutral-50;
-$light-button-tertiary-color: $primary-800;
-$light-button-tertiary-disabled-color: $neutral-400;
+  $button-tertiary-background-color: $primary-200;
+  $button-tertiary-focused-background-color: $primary-300;
+  $button-tertiary-disabled-background-color: $neutral-50;
+  $button-tertiary-text-color: $primary-800;
+  $button-tertiary-disabled-color: $neutral-400;
 
-$light-button-warning-background-color: $warning-primary;
-$light-button-warning-focused-background-color: $warning-dark;
-$light-button-warning-disabled-background-color: $neutral-50;
-$light-button-warning-color: $primary-100;
-$light-button-warning-disabled-color: $warning-light;
-$light-button-warning-disabled-border-color: $warning-light;
+  $button-warning-background-color: $warning-primary;
+  $button-warning-focused-background-color: $warning-dark;
+  $button-warning-disabled-background-color: $neutral-50;
+  $button-warning-text-color: $primary-100;
+  $button-warning-disabled-color: $warning-light;
+  $button-warning-disabled-border-color: $warning-light;
 
-// Input
-$light-input-hover-effect: $shadow-small;
+  // Input
+  $input-hover-effect: $shadow-small;
 
-$light-input-background-color: $neutral-50; // TODO: apply in Figma, no fill in system
-$light-input-color: $neutral-900;
-$light-input-focused-background-color: $primary-100;
-$light-input-placeholder-color: $neutral-300;
-$light-input-label-color: $neutral-700;
+  $input-background-color: $neutral-50;
+  $input-text-color: $neutral-900;
+  $input-focused-background-color: $primary-100;
+  $input-placeholder-color: $neutral-300;
+  $input-label-color: $neutral-700;
 
-$light-input-disabled-background-color: $neutral-100;
-$light-input-disabled-border-color: $neutral-500;
+  $input-disabled-background-color: $neutral-100;
+  $input-disabled-border-color: $neutral-500;
 
-$light-input-default-border-color: $primary-500;
-$light-input-default-focused-border-color: $primary-600;
-$light-input-default-left-icon-color: $neutral-700;
-$light-input-default-right-icon-color: $light-input-default-border-color;
-$light-input-default-right-icon-focused-color: $light-input-default-focused-border-color;
+  $input-default-border-color: $primary-500;
+  $input-default-focused-border-color: $primary-600;
+  $input-default-left-icon-color: $neutral-700;
+  $input-default-right-icon-color: $input-default-border-color;
+  $input-default-right-icon-focused-color: $input-default-focused-border-color;
 
-$light-input-warning-border-color: $warning-light;
-$light-input-warning-focused-border-color: $warning-primary;
-$light-input-warning-left-icon-color: $neutral-700;
-$light-input-warning-right-icon-color: $light-input-warning-border-color;
-$light-input-warning-right-icon-focused-color: $light-input-warning-focused-border-color;
+  $input-warning-border-color: $warning-light;
+  $input-warning-focused-border-color: $warning-primary;
+  $input-warning-left-icon-color: $neutral-700;
+  $input-warning-right-icon-color: $input-warning-border-color;
+  $input-warning-right-icon-focused-color: $input-warning-focused-border-color;
 
-// Checkbox
-$light-checkbox-background-color: $neutral-50;
-$light-checkbox-color: $neutral-900;
-$light-checkbox-outline-color: $primary-300;
-$light-checkbox-default-check-color: $primary-100;
+  // Checkbox
+  $checkbox-background-color: $neutral-50;
+  $checkbox-focused-background-color: $primary-100;
+  $checkbox-text-color: $neutral-900;
+  $checkbox-outline-color: $primary-300;
+  $checkbox-default-check-color: $primary-100;
 
-$light-checkbox-default-border-color: $primary-400;
-$light-checkbox-default-focused-background-color: $primary-100;
-$light-checkbox-default-focused-border-color: $primary-600;
-$light-checkbox-default-checked-background-color: $primary-600;
-$light-checkbox-default-checked-border-color: $primary-600;
+  $checkbox-default-border-color: $primary-400;
+  $checkbox-default-focused-border-color: $primary-600;
+  $checkbox-default-checked-background-color: $primary-600;
+  $checkbox-default-checked-border-color: $primary-600;
 
-$light-checkbox-warning-border-color: $warning-light;
-$light-checkbox-warning-focused-background-color: $warning-primary;
-$light-checkbox-warning-focused-border-color: $warning-primary;
+  $checkbox-warning-border-color: $warning-light;
+  $checkbox-warning-focused-background-color: $warning-primary;
+  $checkbox-warning-focused-border-color: $warning-primary;
 
-$light-checkbox-disabled-background-color: $neutral-300;
-$light-checkbox-disabled-border-color: $neutral-700;
-$light-checkbox-disabled-color: $neutral-600;
+  $checkbox-disabled-background-color: $neutral-300;
+  $checkbox-disabled-border-color: $neutral-700;
+  $checkbox-disabled-color: $neutral-600;
+
+  // Radio
+  $radio-background-color: $neutral-50;
+  $radio-background-color: $primary-100;
+  $radio-text-color: $neutral-900;
+  $radio-outline-color: $primary-300;
+  $radio-default-check-color: $primary-100;
+
+  $radio-default-border-color: $primary-400;
+  $radio-default-focused-border-color: $primary-600;
+  $radio-default-checked-background-color: $primary-600;
+  $radio-default-checked-border-color: $primary-600;
+
+  $radio-warning-border-color: $warning-light;
+  $radio-warning-focused-background-color: $warning-primary;
+  $radio-warning-focused-border-color: $warning-primary;
+
+  $radio-disabled-background-color: $neutral-300;
+  $radio-disabled-border-color: $neutral-700;
+  $radio-disabled-color: $neutral-600;
+
+  // Toast
+  $toast-primary-text-color: $primary-100;
+
+  $toast-primary-background-color: $primary-600;
+  $toast-primary-before-background-color: $primary-700;
+
+  $toast-warning-background-color: $warning-primary;
+  $toast-warning-before-background-color: $warning-dark;
+
+  $toast-success-background-color: $success-primary;
+  $toast-success-before-background-color: $success-dark;
+}
+
+/**
+ * Dark theme
+ * TODO: Adapt to acutal dark theme
+ */
+:root.dark-theme {
+  // General
+  $background-color: $neutral-800;
+
+  // Notes box - not used right now (only internally in Figma), but could be used in the future
+  $box-background-color: $neutral-100;
+  $box-text-color: $neutral-700;
+
+  // Text
+  $text-header-color: $neutral-900;
+  $text-subtitle-color: $neutral-700;
+  $text-paragraph-color: $neutral-800;
+
+  // Button
+  $button-hover-effect: $shadow-small;
+
+  $button-primary-background-color: $primary-600;
+  $button-primary-focused-background-color: $primary-700;
+  $button-primary-disabled-background-color: $neutral-200;
+  $button-primary-color: $primary-100;
+  $button-primary-disabled-color: $primary-600;
+
+  $button-secondary-background-color: $secondary-500;
+  $button-secondary-focused-background-color: $secondary-600;
+  $button-secondary-disabled-background-color: $neutral-50;
+  $button-secondary-color: $secondary-100;
+  $button-secondary-disabled-color: $neutral-400;
+  $button-secondary-disabled-border-color: $neutral-300;
+
+  $button-tertiary-background-color: $primary-200;
+  $button-tertiary-focused-background-color: $primary-300;
+  $button-tertiary-disabled-background-color: $neutral-50;
+  $button-tertiary-color: $primary-800;
+  $button-tertiary-disabled-color: $neutral-400;
+
+  $button-warning-background-color: $warning-primary;
+  $button-warning-focused-background-color: $warning-dark;
+  $button-warning-disabled-background-color: $neutral-50;
+  $button-warning-color: $primary-100;
+  $button-warning-disabled-color: $warning-light;
+  $button-warning-disabled-border-color: $warning-light;
+
+  // Input
+  $input-hover-effect: $shadow-small;
+
+  $input-background-color: $neutral-50;
+  $input-color: $neutral-900;
+  $input-focused-background-color: $primary-100;
+  $input-placeholder-color: $neutral-300;
+  $input-label-color: $neutral-700;
+
+  $input-disabled-background-color: $neutral-100;
+  $input-disabled-border-color: $neutral-500;
+
+  $input-default-border-color: $primary-500;
+  $input-default-focused-border-color: $primary-600;
+  $input-default-left-icon-color: $neutral-700;
+  $input-default-right-icon-color: $input-default-border-color;
+  $input-default-right-icon-focused-color: $input-default-focused-border-color;
+
+  $input-warning-border-color: $warning-light;
+  $input-warning-focused-border-color: $warning-primary;
+  $input-warning-left-icon-color: $neutral-700;
+  $input-warning-right-icon-color: $input-warning-border-color;
+  $input-warning-right-icon-focused-color: $input-warning-focused-border-color;
+
+  // Checkbox
+  $checkbox-background-color: $neutral-50;
+  $checkbox-focused-background-color: $primary-100;
+  $checkbox-color: $neutral-900;
+  $checkbox-outline-color: $primary-300;
+  $checkbox-default-check-color: $primary-100;
+
+  $checkbox-default-border-color: $primary-400;
+  $checkbox-default-focused-border-color: $primary-600;
+  $checkbox-default-checked-background-color: $primary-600;
+  $checkbox-default-checked-border-color: $primary-600;
+
+  $checkbox-warning-border-color: $warning-light;
+  $checkbox-warning-focused-background-color: $warning-primary;
+  $checkbox-warning-focused-border-color: $warning-primary;
+
+  $checkbox-disabled-background-color: $neutral-300;
+  $checkbox-disabled-border-color: $neutral-700;
+  $checkbox-disabled-color: $neutral-600;
+
+  // Radio
+  $radio-background-color: $neutral-50;
+  $radio-background-color: $primary-100;
+  $radio-color: $neutral-900;
+  $radio-outline-color: $primary-300;
+  $radio-default-check-color: $primary-100;
+
+  $radio-default-border-color: $primary-400;
+  $radio-default-focused-border-color: $primary-600;
+  $radio-default-checked-background-color: $primary-600;
+  $radio-default-checked-border-color: $primary-600;
+
+  $radio-warning-border-color: $warning-light;
+  $radio-warning-focused-background-color: $warning-primary;
+  $radio-warning-focused-border-color: $warning-primary;
+
+  $radio-disabled-background-color: $neutral-300;
+  $radio-disabled-border-color: $neutral-700;
+  $radio-disabled-color: $neutral-600;
+}
