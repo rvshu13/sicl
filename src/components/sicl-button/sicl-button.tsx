@@ -9,7 +9,7 @@ export class SiclButton {
   @Element() el: HTMLSiclButtonElement;
 
   @Prop() type: string = 'button';
-  @Prop() class: 'primary' | 'secondary' | 'tertiary' | 'warning' = 'primary';
+  @Prop() class: 'primary' | 'secondary' | 'tertiary' | 'danger' = 'primary';
   @Prop() disabled: boolean = false;
   @Prop() name?: string;
   @Prop() iconLeft?: string;

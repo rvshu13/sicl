@@ -7,7 +7,7 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface SiclButton {
-        "class": 'primary' | 'secondary' | 'tertiary' | 'warning';
+        "class": 'primary' | 'secondary' | 'tertiary' | 'danger';
         "disabled": boolean;
         "iconLeft"?: string;
         "iconRight"?: string;
@@ -57,6 +57,8 @@ export namespace Components {
         "name": string;
         "required": boolean;
     }
+    interface SiclToast {
+    }
 }
 declare global {
     interface HTMLSiclButtonElement extends Components.SiclButton, HTMLStencilElement {
@@ -95,6 +97,12 @@ declare global {
         prototype: HTMLSiclRadioGroupElement;
         new (): HTMLSiclRadioGroupElement;
     };
+    interface HTMLSiclToastElement extends Components.SiclToast, HTMLStencilElement {
+    }
+    var HTMLSiclToastElement: {
+        prototype: HTMLSiclToastElement;
+        new (): HTMLSiclToastElement;
+    };
     interface HTMLElementTagNameMap {
         "sicl-button": HTMLSiclButtonElement;
         "sicl-checkbox": HTMLSiclCheckboxElement;
@@ -102,11 +110,12 @@ declare global {
         "sicl-input": HTMLSiclInputElement;
         "sicl-radio": HTMLSiclRadioElement;
         "sicl-radio-group": HTMLSiclRadioGroupElement;
+        "sicl-toast": HTMLSiclToastElement;
     }
 }
 declare namespace LocalJSX {
     interface SiclButton {
-        "class"?: 'primary' | 'secondary' | 'tertiary' | 'warning';
+        "class"?: 'primary' | 'secondary' | 'tertiary' | 'danger';
         "disabled"?: boolean;
         "iconLeft"?: string;
         "iconRight"?: string;
@@ -159,6 +168,8 @@ declare namespace LocalJSX {
         "onSiclRadioGroupChange"?: (event: CustomEvent<any>) => void;
         "required"?: boolean;
     }
+    interface SiclToast {
+    }
     interface IntrinsicElements {
         "sicl-button": SiclButton;
         "sicl-checkbox": SiclCheckbox;
@@ -166,6 +177,7 @@ declare namespace LocalJSX {
         "sicl-input": SiclInput;
         "sicl-radio": SiclRadio;
         "sicl-radio-group": SiclRadioGroup;
+        "sicl-toast": SiclToast;
     }
 }
 export { LocalJSX as JSX };
@@ -178,6 +190,7 @@ declare module "@stencil/core" {
             "sicl-input": LocalJSX.SiclInput & JSXBase.HTMLAttributes<HTMLSiclInputElement>;
             "sicl-radio": LocalJSX.SiclRadio & JSXBase.HTMLAttributes<HTMLSiclRadioElement>;
             "sicl-radio-group": LocalJSX.SiclRadioGroup & JSXBase.HTMLAttributes<HTMLSiclRadioGroupElement>;
+            "sicl-toast": LocalJSX.SiclToast & JSXBase.HTMLAttributes<HTMLSiclToastElement>;
         }
     }
 }
