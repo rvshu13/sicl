@@ -5,7 +5,7 @@
   column-gap: 8px;
   align-items: center;
 
-  color: $neutral-900;
+  color: var(--radio-text-color);
   font-family: $typography_font-family;
   font-size: $typography_size-body-2;
   font-weight: $typography_weight-regular;
@@ -17,14 +17,14 @@
 }
 
 .radio__wrapper input[type="radio"]:focus-within {
-  color: $primary-600;
+  color: var(--radio-default-focused-border-color);
 }
 
 input[type="radio"] {
   cursor: inherit;
   -webkit-appearance: none;
   appearance: none;
-  background-color: $neutral-50;
+  background-color: var(--radio-background-color);
   margin: 0;
   flex-shrink: 0;
 
@@ -32,7 +32,7 @@ input[type="radio"] {
   color: currentColor;
   width: 18px;
   height: 18px;
-  border: 2px solid $primary-400;
+  border: 2px solid var(--radio-default-border-color);
   border-radius: 50%;
   transform: translateY(-0.075em);
 
@@ -48,25 +48,25 @@ input[type="radio"]::before {
   border-radius: 50%;
   transform: scale(0);
   transition: 100ms transform ease-in-out;
-  background-color: $primary-600;
+  background-color: var(--radio-default-checked-background-color);
   //box-shadow: inset 10px 10px $primary-600;
 }
 
 input[type="radio"]:hover {
-  border-color: $primary-600;
+  border-color: var(--radio-default-focused-border-color);
 }
 
 input[type="radio"]:checked::before {
-  border-color: $primary-600;
+  border-color: var(--radio-default-checked-border-color);
   transform: scale(1);
 }
 
 input[type="radio"]:checked {
-  border-color: $primary-600;
+  border-color: var(--radio-default-checked-border-color);
 }
 
 input[type="radio"]:focus {
-  outline: max(3px, 2px) solid $primary-300; 
+  outline: max(3px, 2px) solid var(--radio-outline-color); 
   outline-offset: max(3px, 2px);
 }
 
@@ -76,16 +76,16 @@ input[type='radio']:focus:not(:focus-visible) {
 
 input[type='radio']:disabled {
   cursor: not-allowed;
-  border-color: $neutral-700;
-  background-color: $neutral-300;
+  border-color: var(--radio-disabled-border-color);
+  background-color: var(--radio-disabled-background-color);
 
   &::before {
     box-shadow: insert 1;
-    background-color: $neutral-700;
+    background-color: var(--radio-disabled-border-color);
   }
 
   & ~ .radio__label {
     cursor: default;
-    color: $neutral-600;
+    color: var(--radio-disabled-color);
   }
 }

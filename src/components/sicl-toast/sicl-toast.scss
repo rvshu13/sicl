@@ -6,7 +6,7 @@
   padding: 0px;
   z-index: 99999;
 
-  box-shadow: $shadow-large;
+  box-shadow: var(--toast-effect);
 }
 
 :host::before {
@@ -15,15 +15,19 @@
   width: 16px;
 
   &.primary {
-    background-color: $toast-primary-before-background-color;
+    background-color: var(--toast-primary-before-background-color);
+  }
+
+  &.danger {
+    background-color: var(--toast-danger-before-background-color);
   }
 
   &.warning {
-    background-color: $toast-warning-before-background-color;
+    background-color: var(--toast-warning-before-background-color);
   }
 
   &.success {
-    background-color: $toast-success-before-background-color;
+    background-color: var(--toast-success-before-background-color);
   }
 }
 
@@ -32,17 +36,21 @@
   flex-direction: row;
   align-items: center;
   padding: 16px;
-  color: $toast-text-color;
+  color: var(--toast-text-color);
 
   &.primary {
-    background-color: $toast-primary-background-color;
+    background-color: var(--toast-primary-background-color);
+  }
+
+  &.danger {
+    background-color: var(--toast-danger-background-color);
   }
 
   &.warning {
-    background-color: $toast-warning-background-color;
+    background-color: var(--toast-warning-background-color);
   }
 
   &.success {
-    background-color: $toast-success-background-color;
+    background-color: var(--toast-success-background-color);
   }
 }

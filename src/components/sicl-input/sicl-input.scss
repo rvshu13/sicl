@@ -6,16 +6,8 @@
   row-gap: 8px;
 }
 
-.input__icon-left {
-  color: $input-left-icon-color;
-}
-
-.input__icon-right {
-  color: currentColor;
-}
-
 .input__label {
-  color: $input-label-color;
+  color: var(--input-label-color);
   font-family: $typography_font-family;
   font-size: $typography_size-body-2;
   font-weight: $typography_weight-semi-bold;
@@ -29,13 +21,13 @@
   font-family: inherit;
   font-size: inherit;
   padding: 0px;
-  color: $input-text-color;
+  color: var(--input-text-color);
   font-family: $typography_font-family;
   font-size: $typography_size-body-2;
   font-weight: $typography_weight-regular;
 
   @include placeholder {
-    color: $input-placeholder-color;
+    color: var(--input-placeholder-color);
     font-weight: $typography_weight-semi-bold;
     opacity: 1;
   }
@@ -49,48 +41,75 @@
   box-sizing: border-box;
   padding: 12px 16px;
   border-radius: 16px;
-  border: 2px solid $input-default-border-color;
+  border: 2px solid var(--input-default-border-color);
   transition: 180ms box-shadow ease-out;
   cursor: text;
 
+  & .input__icon-left {
+    color: var(--input-left-icon-color);
+  }
+
+  & .input__icon-right {
+    color: var(--input-default-border-color);
+  }
+
   &[disabled] {
     cursor: not-allowed;
-    border: 2px solid $input-disabled-border-color;
-    background: $input-disabled-background-color;
+    border: 2px solid var(--input-disabled-border-color);
+    background: var(--input-disabled-background-color);
   }
 
   &:focus-within:not([disabled]) {
     outline: 3px solid transparent;
-    background-color: $input-focused-background-color;
-    border-color: 2px solid $input-default-focused-border-color;
-    box-shadow: $input-hover-effect;
+    background-color: var(--input-focused-background-color);
+    border-color: var(--input-default-focused-border-color);
+    box-shadow: var(--input-hover-effect);
+
+    & .input__icon-right {
+      color: var(--input-default-focused-border-color);
+    }
   }
 
   &:hover:not([disabled]) {
-    background-color: $input-focused-background-color;
-    border: 2px solid $input-default-focused-border-color;
+    background-color: var(--input-focused-background-color);
+    border: 2px solid var(--input-default-focused-border-color);
+
+    & .input__icon-right {
+      color: var(--input-default-focused-border-color);
+    }
   }
 
   &.error {
-    //background-color: #fff;
-    border: 2px solid $input-error-border-color;
+    border: 2px solid var(--input-error-border-color);
+
+    & .input__icon-right {
+      color: var(--input-error-border-color);
+    }
 
     &[disabled] {
       cursor: not-allowed;
-      border: 2px solid $input-disabled-border-color;
-      background: $input-disabled-background-color;
+      border: 2px solid var(--input-disabled-border-color);
+      background: var(--input-disabled-background-color);
     }
 
     &:focus-within:not([disabled]) {
       outline: 3px solid transparent;
-      background-color: $input-focused-background-color;
-      border-color: 2px solid $input-error-focused-border-color;
-      box-shadow: $input-hover-effect;
+      background-color: var(--input-focused-background-color);
+      border-color: var(--input-error-focused-border-color);
+      box-shadow: var(--input-hover-effect);
+
+      & .input__icon-right {
+        color: var(--input-error-focused-border-color);
+      }
     }
 
     &:hover:not([disabled]) {
-      background-color: $input-focused-background-color;
-      border: 2px solid $input-error-focused-border-color;
+      background-color: var(--input-focused-background-color);
+      border: 2px solid var(--input-error-focused-border-color);
+
+      & .input__icon-right {
+        color: var(--input-error-focused-border-color);
+      }
     }
   }
 }

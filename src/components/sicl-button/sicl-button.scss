@@ -21,86 +21,86 @@
   transition: 180ms box-shadow ease-in-out;
   
   &.primary {
-    background: $button-primary-background-color;
-    color: $button-primary-text-color;
+    background: var(--button-primary-background-color);
+    color: var(--button-primary-text-color);
 
     &[disabled] {
       cursor: not-allowed;
-      background: $button-primary-disabled-background-color;
-      color: $button-primary-disabled-color;
+      background: var(--button-primary-disabled-background-color);
+      color: var(--button-primary-disabled-color);
     }
 
     &:focus:not([disabled]) {
-      background: $button-primary-focused-background-color;
+      background: var(--button-primary-focused-background-color);
     }
 
     &:hover:not([disabled]) {
-      background: $button-primary-focused-background-color;
-      box-shadow: $button-hover-effect;
+      background: var(--button-primary-focused-background-color);
+      box-shadow: var(--button-hover-effect);
     }
   }
 
   &.secondary {
-    background: $button-secondary-background-color;
-    color: $button-secondary-text-color;
+    background: var(--button-secondary-background-color);
+    color: var(--button-secondary-text-color);
 
     &[disabled] {
       cursor: not-allowed;
       background: none;
-      outline: $button-secondary-disabled-border-color solid 1px;
+      outline: var(--button-secondary-disabled-border-color) solid 1px;
       outline-offset: -1px;
-      color: $button-secondary-disabled-color;
+      color: var(--button-secondary-disabled-color);
     }
 
     &:focus:not([disabled]) {
-      background: $button-secondary-focused-background-color;
+      background: var(--button-secondary-focused-background-color);
     }
 
     &:hover:not([disabled]) {
-      background: $button-secondary-focused-background-color;
-      box-shadow: $button-hover-effect;
+      background: var(--button-secondary-focused-background-color);
+      box-shadow: var(--button-hover-effect);
     }
   }
 
   &.tertiary {
-    background: $button-tertiary-background-color;
-    color: $button-tertiary-text-color;
+    background: var(--button-tertiary-background-color);
+    color: var(--button-tertiary-text-color);
 
     &[disabled] {
       cursor: not-allowed;
-      background: $button-tertiary-disabled-background-color;
-      color: $button-tertiary-disabled-color;
+      background: var(--button-tertiary-disabled-background-color);
+      color: var(--button-tertiary-disabled-color);
     }
 
     &:focus:not([disabled]) {
-      background: $button-tertiary-focused-background-color;
+      background: var(--button-tertiary-focused-background-color);
     }
 
     &:hover:not([disabled]) {
-      background: $button-tertiary-focused-background-color;
-      box-shadow: $button-hover-effect;
+      background: var(--button-tertiary-focused-background-color);
+      box-shadow: var(--button-hover-effect);
     }
   }
 
   &.danger {
-    background: $button-danger-background-color;
-    color: $button-danger-text-color;
+    background: var(--button-danger-background-color);
+    color: var(--button-danger-text-color);
 
     &[disabled] {
       cursor: not-allowed;
       background: none;
-      outline: $button-danger-disabled-border-color solid 1px;
+      outline: var(--button-danger-disabled-border-color) solid 1px;
       outline-offset: -1px;
-      color: $button-danger-disabled-color;
+      color: var(--button-danger-disabled-color);
     }
 
     &:focus:not([disabled]) {
-      background: $button-danger-focused-background-color;
+      background: var(--button-danger-focused-background-color);
     }
 
     &:hover:not([disabled]) {
-      background: $button-danger-focused-background-color;
-      box-shadow: $button-hover-effect;
+      background: var(--button-danger-focused-background-color);
+      box-shadow: var(--button-hover-effect);
     }
   }
 }

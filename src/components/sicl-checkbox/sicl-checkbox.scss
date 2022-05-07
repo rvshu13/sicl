@@ -5,7 +5,7 @@
   column-gap: 8px;
   align-items: center;
 
-  color: $neutral-900;
+  color: var(--checkbox-text-color);
   font-family: $typography_font-family;
   font-size: $typography_size-body-2;
   font-weight: $typography_weight-regular;
@@ -21,7 +21,7 @@
 
 .checkbox__wrapper input[type='checkbox']:hover + svg {
   .checkbox__box {
-    stroke: $primary-600;
+    stroke: var(--checkbox-default-focused-border-color);
   }
 }
 
@@ -32,7 +32,8 @@
   box-sizing: border-box;
 
   .checkbox__box {
-    color: $primary-400;
+    color: var(--checkbox-default-border-color);
+    background-color: var(--checkbox-background-color);
   }
 
   .checkbox__check {
@@ -46,19 +47,32 @@
 
 .checkbox__wrapper input[type='checkbox']:checked + svg {
   .checkbox__box {
-    fill: $primary-600;
-    stroke: $primary-600;
+    fill: var(--checkbox-default-checked-background-color);
+    stroke: var(--checkbox-default-checked-border-color);
   }
 
   .checkbox__check {
     display: block;
-    stroke: $primary-100;
+    stroke: var(--checkbox-default-check-color);
+  }
+}
+
+.checkbox__wrapper input[type='checkbox']:checked:disabled + svg {
+  .checkbox__box {
+    fill: var(--checkbox-disabled-border-color);
+    stroke: var(--checkbox-disabled-border-color);
+  }
+
+  .checkbox__check {
+    display: block;
+    stroke: var(--checkbox-default-check-color);
   }
 }
 
 .checkbox__wrapper input[type='checkbox']:focus + svg {
-  outline: 3px solid $primary-300;
+  outline: 3px solid var(--checkbox-outline-color);
   outline-offset: 3px;
+  background-color: var(--checkbox-focused-background-color);
 }
 
 .checkbox__wrapper input[type='checkbox']:focus:not(:focus-visible) + svg {
@@ -70,21 +84,21 @@
 
   & ~ .checkbox__label {
     cursor: default;
-    color: $neutral-600;
+    color: var(--checkbox-disabled-color);
   }
 
   & + svg {
     .checkbox__box {
       cursor: not-allowed;
-      fill: $neutral-300;
-      stroke: $neutral-700;
-      color: $neutral-700;
+      fill: var(--checkbox-disabled-background-color);
+      stroke: var(--checkbox-disabled-border-color);
+      color: var(--checkbox-disabled-border-color);
     }
 
     .checkbox__check {
       cursor: not-allowed;
       display: block;
-      stroke: $neutral-300;
+      stroke: var(--checkbox-default-check-color);
     }
   }
 }
