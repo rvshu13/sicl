@@ -82,12 +82,13 @@
   --radio-disabled-color: #{$neutral-600};
   // Toast
   --toast-effect: #{$shadow-large};
-  --toast-primary-text-color: #{$primary-100};
+  --toast-text-color: #{$primary-100};
   --toast-primary-background-color: #{$primary-600};
   --toast-primary-before-background-color: #{$primary-700};
   --toast-danger-background-color: #{$danger-primary};
   --toast-danger-before-background-color: #{$danger-dark};
   --toast-warning-background-color: #{$warning-primary};
+  --toast-warning-text-color: ${$neutral-900};
   --toast-warning-before-background-color: #{$warning-dark};
   --toast-success-background-color: #{$success-primary};
   --toast-success-before-background-color: #{$success-dark};

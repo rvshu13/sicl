@@ -58,6 +58,10 @@ export namespace Components {
         "required": boolean;
     }
     interface SiclToast {
+        "active": false;
+        "dismissDuration": string;
+        "label": string;
+        "type": 'primary' | 'danger' | 'warning' | 'success';
     }
 }
 declare global {
@@ -169,6 +173,14 @@ declare namespace LocalJSX {
         "required"?: boolean;
     }
     interface SiclToast {
+        "active"?: false;
+        "dismissDuration"?: string;
+        "label": string;
+        "onSiclToastHide"?: (event: CustomEvent<any>) => void;
+        "onSiclToastRegister"?: (event: CustomEvent<any>) => void;
+        "onSiclToastShow"?: (event: CustomEvent<any>) => void;
+        "onSiclToastSync"?: (event: CustomEvent<any>) => void;
+        "type"?: 'primary' | 'danger' | 'warning' | 'success';
     }
     interface IntrinsicElements {
         "sicl-button": SiclButton;

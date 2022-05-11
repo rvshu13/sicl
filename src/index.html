@@ -49,12 +49,19 @@
         </div>
         <sicl-radio-group name="options">
           <sicl-radio label-text="Option 1"></sicl-radio>
-          <sicl-radio label-text="Option 2"></sicl-radio>
+          <sicl-radio label-text="Option 2" checked></sicl-radio>
           <sicl-radio label-text="Option 3"></sicl-radio>
           <sicl-radio label-text="Option 4"></sicl-radio>
+        </sicl-radio-group>
+        <sicl-radio-group name="disabled">
           <sicl-radio label-text="Disabled" disabled></sicl-radio>
           <sicl-radio label-text="Disabled & checked" disabled checked></sicl-radio>
         </sicl-radio-group>
+      </div>
+      <div class="row">
+        <sicl-toast label="toast-success" type="success" active>
+          <div slot="message">Message</div>
+        </sicl-toast>
       </div>
     </div>
   </body>

@@ -47,7 +47,7 @@ export class SiclButton {
           class={`btn ${this.class}`} 
           disabled={this.disabled} type={this.type}
           name={this.name}
-          onClick = {this.handleClick}
+          onClick={this.handleClick}
         >
           {this.iconLeftEl()}
           <slot />

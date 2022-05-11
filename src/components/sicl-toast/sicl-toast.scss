@@ -1,56 +1,68 @@
-:host {
+.toast__wrapper {
   position: fixed;
+  bottom: 3%;
+  right: 0;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
   padding: 0px;
-  z-index: 99999;
-
-  box-shadow: var(--toast-effect);
-}
-
-:host::before {
-  content: '';
-  position: static;
-  width: 16px;
-
-  &.primary {
-    background-color: var(--toast-primary-before-background-color);
-  }
-
-  &.danger {
-    background-color: var(--toast-danger-before-background-color);
-  }
-
-  &.warning {
-    background-color: var(--toast-warning-before-background-color);
-  }
-
-  &.success {
-    background-color: var(--toast-success-before-background-color);
-  }
-}
-
-.toast-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 16px;
+  z-index: 99;
+  border-radius: 4px;
   color: var(--toast-text-color);
+  box-shadow: var(--toast-effect);
+
+  &::before {
+    display: block;
+    content: '';
+    width: 16px;
+    border-radius: 4px 0px 0px 4px;
+    z-index: 100;
+  }
 
   &.primary {
     background-color: var(--toast-primary-background-color);
+
+    &::before {
+      background-color: var(--toast-primary-before-background-color);
+    }
   }
 
   &.danger {
     background-color: var(--toast-danger-background-color);
+
+    &::before {
+      background-color: var(--toast-danger-before-background-color);
+    }
   }
 
   &.warning {
     background-color: var(--toast-warning-background-color);
+    color: var(--toast-warning-text-color);
+
+    &::before {
+      background-color: var(--toast-warning-before-background-color);
+    }
   }
 
   &.success {
     background-color: var(--toast-success-background-color);
+
+    &::before {
+      background-color: var(--toast-success-before-background-color);
+    }
   }
+}
+
+.toast__content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px;
+  gap: 8px;
+  color: inherit;
+
+  font-family: $typography_font-family;
+  font-weight: $typography_weight-semi-bold;
+  font-size: $typography_size-body-1;
+  line-height: $typography_line-height-body-1;
 }
