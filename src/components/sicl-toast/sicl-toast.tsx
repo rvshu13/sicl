@@ -80,8 +80,8 @@ export class SiclToast {
 
   render() {
     return (
-      <Host>
-        <div class={`toast__wrapper ${this.type}`}>
+      <Host aria-hidden={!this.active.toString()}>
+        <div class={`toast__wrapper ${this.type} ${this.queued}`}>
           <div class="toast__content">
             <slot name="message"></slot>
           </div>

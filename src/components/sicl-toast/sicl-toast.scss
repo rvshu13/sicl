@@ -7,9 +7,11 @@
   align-items: stretch;
   padding: 0px;
   z-index: 99;
-  border-radius: 4px;
+  border-radius: 4px 0px 0px 4px;
   color: var(--toast-text-color);
   box-shadow: var(--toast-effect);
+  opacity: 0;
+  transform: translate3d(0, 1, 0);
 
   &::before {
     display: block;
@@ -50,6 +52,14 @@
     &::before {
       background-color: var(--toast-success-before-background-color);
     }
+  }
+}
+
+:host([active]) {
+  .toast__wrapper:not(.queued) {
+    opacity: 100%;
+    pointer-events: initial;
+    transform: translate3d(0, -1, inherit);
   }
 }
 
