@@ -1,4 +1,4 @@
-import { Component, h, Prop } from '@stencil/core';
+import { Component, h, Host, Prop, Element } from '@stencil/core';
 
 @Component({
   tag: 'sicl-button',
@@ -6,35 +6,54 @@ import { Component, h, Prop } from '@stencil/core';
   shadow: true,
 })
 export class SiclButton {
-  @Prop() text: string;
-  @Prop() icon: string;
-  @Prop() iconPosition: 'left' | 'right' = 'left';
-  @Prop() type: 'primary' | 'secondary' | 'tertiary' | 'warning' = 'primary';
-  @Prop() disabled: boolean;
+  @Element() el: HTMLSiclButtonElement;
+
+  @Prop() type: string = 'button';
+  @Prop() class: 'primary' | 'secondary' | 'tertiary' | 'danger' = 'primary';
+  @Prop() disabled: boolean = false;
+  @Prop() name?: string;
+  @Prop() iconLeft?: string;
+  @Prop() iconRight?: string;
+
+  formEl: HTMLFormElement;
+
+  iconLeftEl = () => {
+    if (this.iconLeft) {
+      return <sicl-icon name={this.iconLeft} size={'20px'}></sicl-icon>;
+    }
+  }
+
+  iconRightEl = () => {
+    if (this.iconRight) {
+      return <sicl-icon name={this.iconRight} size={'20px'}></sicl-icon>;
+    }
+  }    
+
+  private handleClick = (): void => {
+    const { formEl, type } = this;  
+
+    // this.type refers to type attribute, not child element type
+    if (type === "submit") {
+      formEl?.requestSubmit();
+    } else if (type === "reset") {
+      formEl?.reset();
+    }
+  };
 
   render() {
-    if (this.icon) {
-      if (this.iconPosition === 'right') {
-        return (
-          <button class={`btn ${this.type}`} disabled={this.disabled} type="button">
-            {this.text}
-            <sicl-icon name={this.icon} size={'20px'}/>
-          </button>
-        );
-      } else {
-        return (
-          <button class={`btn ${this.type}`} disabled={this.disabled} type="button">
-            <sicl-icon name={this.icon} size={'20px'}/>
-            {this.text}
-          </button>
-        );
-      }
-    } else {
-      return (
-        <button class={`btn ${this.type}`} disabled={this.disabled} type="button">
-          {this.text}
+    return (
+      <Host>
+        <button 
+          class={`btn ${this.class}`} 
+          disabled={this.disabled} type={this.type}
+          name={this.name}
+          onClick={this.handleClick}
+        >
+          {this.iconLeftEl()}
+          <slot />
+          {this.iconRightEl()}
         </button>
-      );
-    }
+      </Host>
+    );
   }
 }

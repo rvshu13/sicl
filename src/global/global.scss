@@ -1,0 +1,56 @@
+@import url('https://rsms.me/inter/inter.css');
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: 'Inter var', sans-serif;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include sicl-dark-theme();
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    @include sicl-light-theme();
+  }
+}
+
+html {
+  font-family: 'Inter', sans-serif;
+  color: $neutral-900;
+}
+
+body {
+  background: var(--background-color);
+}
+
+/* Containers */
+/* Optional to add containers in global */
+/* Adding for demo purpose only */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--container-background-color);
+  border-radius: 16px;
+}
+
+.container .row {
+  margin: 24px;
+  padding: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .column {
+  margin: 24px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

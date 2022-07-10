@@ -1,7 +1,7 @@
 {
   "name": "sicl",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "Simple & Intuitive Component Library",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -12,7 +12,7 @@
   "unpkg": "dist/sicl/sicl.esm.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ionic-team/stencil-component-starter.git"
+    "url": "https://github.com/rvshu13/sicl"
   },
   "files": [
     "dist/",
@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "@stencil/sass": "^1.5.2",
+    "@types/feather-icons": "^4.7.0",
     "@types/jest": "^26.0.24",
     "jest": "^26.6.3",
     "jest-cli": "^26.6.3",

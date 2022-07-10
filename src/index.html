@@ -10,23 +10,58 @@
   </head>
   <body>
     <div class="container">
-      <div class="row space-between">
-        <sicl-button type="primary" text="Button"></sicl-button>
-        <sicl-button type="secondary" text="Button"></sicl-button>
-        <sicl-button type="tertiary" text="Button"></sicl-button>
-        <sicl-button type="warning" text="Button"></sicl-button>
+      <div class="row">
+        <sicl-button class="primary" type="button">Button</sicl-button>
+        <sicl-button class="secondary" type="button">Button</sicl-button>
+        <sicl-button class="tertiary" type="button">Button</sicl-button>
+        <sicl-button class="danger" type="button">Button</sicl-button>
       </div>
-      <div class="row space-between">
-        <sicl-button type="primary" text="Button" icon="search"></sicl-button>
-        <sicl-button type="secondary" text="Button" icon="arrow-left"></sicl-button>
-        <sicl-button type="tertiary" text="Button" icon="help-circle"></sicl-button>
-        <sicl-button type="warning" text="Button" icon="trash-2"></sicl-button>
+      <div class="row">
+        <sicl-button class="primary" type="button" icon-left="search">Button</sicl-button>
+        <sicl-button class="secondary" type="button" icon-left="arrow-left">Button</sicl-button>
+        <sicl-button class="tertiary" type="button" icon-left="help-circle">Button</sicl-button>
+        <sicl-button class="danger" type="button" icon-left="trash-2">Button</sicl-button>
       </div>
-      <div class="row space-between">
-        <sicl-button type="primary" text="Button" disabled></sicl-button>
-        <sicl-button type="secondary" text="Button" disabled></sicl-button>
-        <sicl-button type="tertiary" text="Button" disabled></sicl-button>
-        <sicl-button type="warning" text="Button" disabled></sicl-button>
+      <div class="row">
+        <sicl-button class="primary" type="button" icon-right="search">Button</sicl-button>
+        <sicl-button class="secondary" type="button" icon-right="arrow-left">Button</sicl-button>
+        <sicl-button class="tertiary" type="button" icon-right="help-circle">Button</sicl-button>
+        <sicl-button class="danger" type="button" icon-right="trash-2">Button</sicl-button>
+      </div>
+      <div class="row">
+        <sicl-button class="primary" type="button" disabled>Button</sicl-button>
+        <sicl-button class="secondary" type="button" disabled>Button</sicl-button>
+        <sicl-button class="tertiary" type="button" disabled>Button</sicl-button>
+        <sicl-button class="danger" type="button" disabled>Button</sicl-button>
+      </div>
+      <div class="row">
+        <sicl-input type="text" placeholder="Placeholder" label-text="Default"></sicl-input>
+        <sicl-input type="text" placeholder="Placeholder" label-text="Default" value="Filled"></sicl-input>
+        <sicl-input type="text" placeholder="Placeholder" label-text="Left icon" icon-left="search"></sicl-input>
+        <sicl-input type="text" placeholder="Placeholder" label-text="Right icon" icon-right="eye"></sicl-input>
+      </div>
+      <div class="row">
+        <div class="column">
+          <sicl-checkbox label-text="Default"></sicl-checkbox>
+          <sicl-checkbox label-text="Checked" checked></sicl-checkbox>
+          <sicl-checkbox label-text="Disabled" disabled></sicl-checkbox>
+          <sicl-checkbox label-text="Disabled & checked" disabled checked></sicl-checkbox>
+        </div>
+        <sicl-radio-group name="options">
+          <sicl-radio label-text="Option 1"></sicl-radio>
+          <sicl-radio label-text="Option 2" checked></sicl-radio>
+          <sicl-radio label-text="Option 3"></sicl-radio>
+          <sicl-radio label-text="Option 4"></sicl-radio>
+        </sicl-radio-group>
+        <sicl-radio-group name="disabled">
+          <sicl-radio label-text="Disabled" disabled></sicl-radio>
+          <sicl-radio label-text="Disabled & checked" disabled checked></sicl-radio>
+        </sicl-radio-group>
+      </div>
+      <div class="row">
+        <sicl-toast label="toast-success" type="success" active="">
+          <div slot="message">Even larger message just to see how long it will be</div>
+        </sicl-toast>
       </div>
     </div>
   </body>

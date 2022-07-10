@@ -1,105 +1,106 @@
 :host {
-  display: block;
+  display: flex;
 }
 
 .btn {
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 24px;
+  font-family: $typography_font-family;
+  font-size: $typography_size-body-1;
+  font-weight: $typography_weight-semi-bold;
+  line-height: $typography_line-height-body-1;
+  transition: 180ms box-shadow ease-in-out;
+  
   &.primary {
-    @include button;
-    background: $primary-600;
-    color: $primary-100;
+    background: var(--button-primary-background-color);
+    color: var(--button-primary-text-color);
 
     &[disabled] {
-      @include button;
-      cursor: default;
-      background: $neutral-200;
-      color: $neutral-600;
+      cursor: not-allowed;
+      background: var(--button-primary-disabled-background-color);
+      color: var(--button-primary-disabled-color);
     }
 
     &:focus:not([disabled]) {
-      @include button;
-      background: $primary-700;
+      background: var(--button-primary-focused-background-color);
     }
 
     &:hover:not([disabled]) {
-      @include button;
-      background: $primary-700;
-      box-shadow: $shadow-small;
+      background: var(--button-primary-focused-background-color);
+      box-shadow: var(--button-hover-effect);
     }
   }
 
   &.secondary {
-    @include button;
-    background: $secondary-500;
-    color: $secondary-100;
+    background: var(--button-secondary-background-color);
+    color: var(--button-secondary-text-color);
 
     &[disabled] {
-      @include button;
-      cursor: default;
+      cursor: not-allowed;
       background: none;
-      outline: $neutral-300 solid 1px;
+      outline: var(--button-secondary-disabled-border-color) solid 1px;
       outline-offset: -1px;
-      color: $neutral-400;
+      color: var(--button-secondary-disabled-color);
     }
 
     &:focus:not([disabled]) {
-      @include button;
-      background: $secondary-600;
+      background: var(--button-secondary-focused-background-color);
     }
 
     &:hover:not([disabled]) {
-      @include button;
-      background: $secondary-600;
-      box-shadow: $shadow-small;
+      background: var(--button-secondary-focused-background-color);
+      box-shadow: var(--button-hover-effect);
     }
   }
 
   &.tertiary {
-    @include button;
-    background: $primary-100;
-    color: $primary-800;
+    background: var(--button-tertiary-background-color);
+    color: var(--button-tertiary-text-color);
 
     &[disabled] {
-      @include button;
-      cursor: default;
-      background: none;
-      color: $neutral-400;
+      cursor: not-allowed;
+      background: var(--button-tertiary-disabled-background-color);
+      color: var(--button-tertiary-disabled-color);
     }
 
     &:focus:not([disabled]) {
-      @include button;
-      background: $primary-200;
+      background: var(--button-tertiary-focused-background-color);
     }
 
     &:hover:not([disabled]) {
-      @include button;
-      background: $primary-200;
-      box-shadow: $shadow-small;
+      background: var(--button-tertiary-focused-background-color);
+      box-shadow: var(--button-hover-effect);
     }
   }
 
-  &.warning {
-    @include button;
-    background: $warning-primary;
-    color: $primary-100;
+  &.danger {
+    background: var(--button-danger-background-color);
+    color: var(--button-danger-text-color);
 
     &[disabled] {
-      @include button;
-      cursor: default;
+      cursor: not-allowed;
       background: none;
-      outline: $warning-light solid 1px;
+      outline: var(--button-danger-disabled-border-color) solid 1px;
       outline-offset: -1px;
-      color: $warning-light;
+      color: var(--button-danger-disabled-color);
     }
 
     &:focus:not([disabled]) {
-      @include button;
-      background: $warning-dark;
+      background: var(--button-danger-focused-background-color);
     }
 
     &:hover:not([disabled]) {
-      @include button;
-      background: $warning-dark;
-      box-shadow: $shadow-small;
+      background: var(--button-danger-focused-background-color);
+      box-shadow: var(--button-hover-effect);
     }
   }
 }
