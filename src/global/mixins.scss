@@ -3,10 +3,8 @@
  */
 @mixin sicl-light-theme() {
   // General
-  --background-color: #{$neutral-50};
-  // Notes box - not used right now (only internally in Figma), but could be used in the future
-  --box-background-color: #{$neutral-100};
-  --box-text-color: #{$neutral-700};
+  --background-color: #{$primary-100};
+  --container-background-color: #{$neutral-100};
   // Text
   --text-header-color: #{$neutral-900};
   --text-subtitle-color: #{$neutral-700};
@@ -82,6 +80,101 @@
   --radio-disabled-color: #{$neutral-600};
   // Toast
   --toast-effect: #{$shadow-large};
+  --toast-text-color: #{$primary-100};
+  --toast-primary-background-color: #{$primary-600};
+  --toast-primary-before-background-color: #{$primary-700};
+  --toast-danger-background-color: #{$danger-primary};
+  --toast-danger-before-background-color: #{$danger-dark};
+  --toast-warning-background-color: #{$warning-primary};
+  --toast-warning-text-color: ${$neutral-900};
+  --toast-warning-before-background-color: #{$warning-dark};
+  --toast-success-background-color: #{$success-primary};
+  --toast-success-before-background-color: #{$success-dark};
+}
+
+/**
+ * Dark theme
+ */
+ @mixin sicl-dark-theme() {
+  // General
+  --background-color: #{$neutral-900};
+  --container-background-color: #{$neutral-800};
+  // Text
+  --text-header-color: #{$neutral-200};
+  --text-subtitle-color: #{$neutral-100};
+  --text-paragraph-color: #{$neutral-50};
+  // Button
+  --button-hover-effect: #{$aura-small};
+  --button-primary-background-color: #{$primary-500};
+  --button-primary-text-color: #{$primary-900};
+  --button-primary-focused-background-color: #{$primary-400};
+  --button-primary-disabled-background-color: #{$neutral-700};
+  --button-primary-disabled-color: #{$neutral-400};
+  --button-secondary-background-color: #{$secondary-300};
+  --button-secondary-text-color: #{$secondary-800};
+  --button-secondary-focused-background-color: #{$secondary-200};
+  --button-secondary-disabled-background-color: #{$neutral-800}; // transparent
+  --button-secondary-disabled-color: #{$neutral-600};
+  --button-secondary-disabled-border-color: #{$neutral-600};
+  --button-tertiary-background-color: #{$primary-900};
+  --button-tertiary-text-color: #{$primary-100};
+  --button-tertiary-focused-background-color: #{$primary-800};
+  --button-tertiary-disabled-background-color: #{$neutral-800}; // transparent
+  --button-tertiary-disabled-color: #{$neutral-600};
+  --button-danger-background-color: #{$danger-dark};
+  --button-danger-text-color: #{$neutral-100};
+  --button-danger-focused-background-color: #{$danger-primary};
+  --button-danger-disabled-background-color: #{$neutral-800}; // transparent
+  --button-danger-disabled-color: #{$danger-light};
+  --button-danger-disabled-border-color: #{$danger-light};
+  // Input
+  --input-hover-effect: #{$aura-medium};
+  --input-background-color: #{$neutral-800};
+  --input-text-color: #{$neutral-100};
+  --input-focused-background-color: #{$primary-900};
+  --input-placeholder-color: #{$neutral-600};
+  --input-label-color: #{$neutral-100};
+  --input-left-icon-color: #{$neutral-200};
+  --input-disabled-background-color: #{$neutral-700};
+  --input-disabled-border-color: #{$neutral-500};
+  --input-default-border-color: #{$primary-600};
+  --input-default-focused-border-color: #{$primary-500};
+  --input-error-border-color: #{$danger-light};
+  --input-error-focused-border-color: #{$danger-primary};
+  // Checkbox
+  --checkbox-background-color: #{$neutral-800};
+  --checkbox-focused-background-color: #{$primary-900};
+  --checkbox-text-color: #{$neutral-100};
+  --checkbox-outline-color: #{$primary-800};
+  --checkbox-default-check-color: #{$primary-900};
+  --checkbox-default-border-color: #{$primary-700};
+  --checkbox-default-focused-border-color: #{$primary-600};
+  --checkbox-default-checked-background-color: #{$primary-600};
+  --checkbox-default-checked-border-color: #{$primary-600};
+  --checkbox-warning-border-color: #{$danger-light};
+  --checkbox-warning-focused-background-color: #{$danger-primary};
+  --checkbox-warning-focused-border-color: #{$danger-primary};
+  --checkbox-disabled-background-color: #{$neutral-700};
+  --checkbox-disabled-border-color: #{$neutral-500};
+  --checkbox-disabled-color: #{$neutral-300};
+  // Radio
+  --radio-background-color: #{$neutral-800};
+  --radio-focused-background-color: #{$primary-900};
+  --radio-text-color: #{$neutral-100};
+  --radio-outline-color: #{$primary-800};
+  --radio-default-check-color: #{$primary-600};
+  --radio-default-border-color: #{$primary-700};
+  --radio-default-focused-border-color: #{$primary-600};
+  --radio-default-checked-background-color: #{$primary-600};
+  --radio-default-checked-border-color: #{$primary-600};
+  --radio-warning-border-color: #{$danger-light};
+  --radio-warning-focused-background-color: #{$danger-primary};
+  --radio-warning-focused-border-color: #{$danger-primary};
+  --radio-disabled-background-color: #{$neutral-700};
+  --radio-disabled-border-color: #{$neutral-500};
+  --radio-disabled-color: #{$neutral-300};
+  // Toast
+  --toast-effect: #{$aura-large};
   --toast-text-color: #{$primary-100};
   --toast-primary-background-color: #{$primary-600};
   --toast-primary-before-background-color: #{$primary-700};

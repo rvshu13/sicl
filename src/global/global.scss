@@ -6,8 +6,16 @@
   }
 }
 
-:root {
-  @include sicl-light-theme();
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include sicl-dark-theme();
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    @include sicl-light-theme();
+  }
 }
 
 html {
@@ -16,7 +24,7 @@ html {
 }
 
 body {
-  background: #575757;
+  background: var(--background-color);
 }
 
 /* Containers */
@@ -26,7 +34,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: #fff;
+  background: var(--container-background-color);
   border-radius: 16px;
 }
 
