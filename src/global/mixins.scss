@@ -19,18 +19,18 @@
   --button-secondary-background-color: #{$secondary-500};
   --button-secondary-text-color: #{$secondary-100};
   --button-secondary-focused-background-color: #{$secondary-600};
-  --button-secondary-disabled-background-color: #{$neutral-50};
+  --button-secondary-disabled-background-color: rgba(#{$neutral-50}, 0); // transparent
   --button-secondary-disabled-color: #{$neutral-400};
   --button-secondary-disabled-border-color: #{$neutral-300};
   --button-tertiary-background-color: #{$primary-200};
   --button-tertiary-text-color: #{$primary-800};
   --button-tertiary-focused-background-color: #{$primary-300};
-  --button-tertiary-disabled-background-color: #{$neutral-50};
+  --button-tertiary-disabled-background-color: rgba(#{$neutral-50}, 0); // transparent
   --button-tertiary-disabled-color: #{$neutral-400};
   --button-danger-background-color: #{$danger-primary};
   --button-danger-text-color: #{$primary-100};
   --button-danger-focused-background-color: #{$danger-dark};
-  --button-danger-disabled-background-color: #{$neutral-50};
+  --button-danger-disabled-background-color: rgba(#{$neutral-50}, 0); // transparent
   --button-danger-disabled-color: #{$danger-light};
   --button-danger-disabled-border-color: #{$danger-light};
   // Input
@@ -113,18 +113,18 @@
   --button-secondary-background-color: #{$secondary-300};
   --button-secondary-text-color: #{$secondary-800};
   --button-secondary-focused-background-color: #{$secondary-200};
-  --button-secondary-disabled-background-color: #{$neutral-800}; // transparent
+  --button-secondary-disabled-background-color: rgba(#{$neutral-800}, 0); // transparent
   --button-secondary-disabled-color: #{$neutral-600};
   --button-secondary-disabled-border-color: #{$neutral-600};
   --button-tertiary-background-color: #{$primary-900};
   --button-tertiary-text-color: #{$primary-100};
   --button-tertiary-focused-background-color: #{$primary-800};
-  --button-tertiary-disabled-background-color: #{$neutral-800}; // transparent
+  --button-tertiary-disabled-background-color: rgba(#{$neutral-800}, 0); // transparent
   --button-tertiary-disabled-color: #{$neutral-600};
   --button-danger-background-color: #{$danger-dark};
   --button-danger-text-color: #{$neutral-100};
   --button-danger-focused-background-color: #{$danger-primary};
-  --button-danger-disabled-background-color: #{$neutral-800}; // transparent
+  --button-danger-disabled-background-color: rgba(#{$neutral-800}, 0); // transparent
   --button-danger-disabled-color: #{$danger-light};
   --button-danger-disabled-border-color: #{$danger-light};
   // Input
