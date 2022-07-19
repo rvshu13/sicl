@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="/build/sicl.css" />
     <script type="module" src="/build/sicl.esm.js"></script>
     <script nomodule src="/build/sicl.js"></script>
+    <style>
+      html {
+        background-color: var(--background-color);
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -42,18 +47,20 @@
       </div>
       <div class="row">
         <div class="column">
-          <sicl-checkbox label-text="Default"></sicl-checkbox>
-          <sicl-checkbox label-text="Checked" checked></sicl-checkbox>
-          <sicl-checkbox label-text="Disabled" disabled></sicl-checkbox>
-          <sicl-checkbox label-text="Disabled & checked" disabled checked></sicl-checkbox>
+          <sicl-checkbox-group name="checkboxes" label-text="Checkboxes">
+            <sicl-checkbox label-text="Default"></sicl-checkbox>
+            <sicl-checkbox label-text="Checked" checked></sicl-checkbox>
+            <sicl-checkbox label-text="Disabled" disabled></sicl-checkbox>
+            <sicl-checkbox label-text="Disabled & checked" disabled checked></sicl-checkbox>
+          </sicl-checkbox-group>
         </div>
-        <sicl-radio-group name="options">
+        <sicl-radio-group name="options" label-text="Options">
           <sicl-radio label-text="Option 1"></sicl-radio>
           <sicl-radio label-text="Option 2" checked></sicl-radio>
           <sicl-radio label-text="Option 3"></sicl-radio>
           <sicl-radio label-text="Option 4"></sicl-radio>
         </sicl-radio-group>
-        <sicl-radio-group name="disabled">
+        <sicl-radio-group name="disabled" label-text="Disabled">
           <sicl-radio label-text="Disabled" disabled></sicl-radio>
           <sicl-radio label-text="Disabled & checked" disabled checked></sicl-radio>
         </sicl-radio-group>

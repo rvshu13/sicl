@@ -23,6 +23,11 @@ export namespace Components {
         "name": string;
         "required": boolean;
     }
+    interface SiclCheckboxGroup {
+        "disabled": boolean;
+        "labelText": string;
+        "name": string;
+    }
     interface SiclIcon {
         "name": string;
         "size": string | '1em';
@@ -54,6 +59,7 @@ export namespace Components {
     }
     interface SiclRadioGroup {
         "disabled": boolean;
+        "labelText": string;
         "name": string;
         "required": boolean;
     }
@@ -76,6 +82,12 @@ declare global {
     var HTMLSiclCheckboxElement: {
         prototype: HTMLSiclCheckboxElement;
         new (): HTMLSiclCheckboxElement;
+    };
+    interface HTMLSiclCheckboxGroupElement extends Components.SiclCheckboxGroup, HTMLStencilElement {
+    }
+    var HTMLSiclCheckboxGroupElement: {
+        prototype: HTMLSiclCheckboxGroupElement;
+        new (): HTMLSiclCheckboxGroupElement;
     };
     interface HTMLSiclIconElement extends Components.SiclIcon, HTMLStencilElement {
     }
@@ -110,6 +122,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "sicl-button": HTMLSiclButtonElement;
         "sicl-checkbox": HTMLSiclCheckboxElement;
+        "sicl-checkbox-group": HTMLSiclCheckboxGroupElement;
         "sicl-icon": HTMLSiclIconElement;
         "sicl-input": HTMLSiclInputElement;
         "sicl-radio": HTMLSiclRadioElement;
@@ -135,6 +148,11 @@ declare namespace LocalJSX {
         "name"?: string;
         "onSiclCheckboxChange"?: (event: CustomEvent<any>) => void;
         "required"?: boolean;
+    }
+    interface SiclCheckboxGroup {
+        "disabled"?: boolean;
+        "labelText": string;
+        "name": string;
     }
     interface SiclIcon {
         "name"?: string;
@@ -168,6 +186,7 @@ declare namespace LocalJSX {
     }
     interface SiclRadioGroup {
         "disabled"?: boolean;
+        "labelText": string;
         "name": string;
         "onSiclRadioGroupChange"?: (event: CustomEvent<any>) => void;
         "required"?: boolean;
@@ -185,6 +204,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "sicl-button": SiclButton;
         "sicl-checkbox": SiclCheckbox;
+        "sicl-checkbox-group": SiclCheckboxGroup;
         "sicl-icon": SiclIcon;
         "sicl-input": SiclInput;
         "sicl-radio": SiclRadio;
@@ -198,6 +218,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "sicl-button": LocalJSX.SiclButton & JSXBase.HTMLAttributes<HTMLSiclButtonElement>;
             "sicl-checkbox": LocalJSX.SiclCheckbox & JSXBase.HTMLAttributes<HTMLSiclCheckboxElement>;
+            "sicl-checkbox-group": LocalJSX.SiclCheckboxGroup & JSXBase.HTMLAttributes<HTMLSiclCheckboxGroupElement>;
             "sicl-icon": LocalJSX.SiclIcon & JSXBase.HTMLAttributes<HTMLSiclIconElement>;
             "sicl-input": LocalJSX.SiclInput & JSXBase.HTMLAttributes<HTMLSiclInputElement>;
             "sicl-radio": LocalJSX.SiclRadio & JSXBase.HTMLAttributes<HTMLSiclRadioElement>;

@@ -1,0 +1,20 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 8px;
+
+  .checkboxgroup__label {
+    color: var(--input-label-color);
+    font-family: $typography_font-family;
+    font-size: $typography_size-body-2;
+    font-weight: $typography_weight-semi-bold;
+    line-height: $typography_line-height-body-2;
+  }
+
+  ::slotted(*) {
+    margin-left: 8px;
+  }
+}
