@@ -16,6 +16,7 @@ export class SiclRadioGroup {
   }
 
   @Prop({ reflect: true }) name!: string;
+  @Prop({ reflect: true }) labelText!: string;
   @Prop({ reflect: true }) required = false;
 
   mutationObserver: MutationObserver;
@@ -50,6 +51,9 @@ export class SiclRadioGroup {
   render(): VNode {
     return (
       <Host role="radiogroup">
+        <label class="radiogroup__label">
+          {this.labelText}
+        </label>
         <slot></slot>
       </Host>
     );
