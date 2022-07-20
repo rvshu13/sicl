@@ -8,6 +8,11 @@ export const config: Config = {
     {
       type: 'dist',
       esmLoaderPath: '../loader',
+      copy: [
+        {
+          src: 'global/variables.scss', dest: 'variables.scss'
+        }
+      ]
     },
     {
       type: 'dist-custom-elements',
@@ -23,8 +28,8 @@ export const config: Config = {
   plugins: [
     sass({
       injectGlobalPaths: [
-        'src/global/mixins.scss',
-        'src/global/global.scss'
+        'src/global/variables.scss',
+        'src/global/mixins.scss'
       ]
     })
   ]

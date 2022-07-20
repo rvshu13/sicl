@@ -1,0 +1,102 @@
+/**
+ * Tokens - universal, above the theme
+ */
+
+// Primary
+$primary-900: hsl(274, 40%, 10%);
+$primary-800: hsl(274, 40%, 20%);
+$primary-700: hsl(274, 40%, 36%);
+$primary-600: hsl(274, 40%, 50%);
+$primary-500: hsl(274, 40%, 60%);
+$primary-400: hsl(274, 50%, 70%);
+$primary-300: hsl(274, 50%, 80%);
+$primary-200: hsl(274, 40%, 88%);
+$primary-100: hsl(274, 40%, 96%);
+
+// Secondary
+$secondary-900: hsl(234, 38%, 10%);
+$secondary-800: hsl(234, 38%, 15%);
+$secondary-700: hsl(234, 38%, 38%);
+$secondary-600: hsl(234, 38%, 50%);
+$secondary-500: hsl(234, 38%, 60%);
+$secondary-400: hsl(234, 38%, 70%);
+$secondary-300: hsl(234, 38%, 80%);
+$secondary-200: hsl(234, 38%, 88%);
+$secondary-100: hsl(234, 38%, 96%);
+
+// Neutral
+$neutral-900: hsl(274, 5%, 2%);
+$neutral-800: hsl(274, 5%, 12%);
+$neutral-700: hsl(274, 5%, 28%);
+$neutral-600: hsl(274, 5%, 38%);
+$neutral-500: hsl(274, 5%, 52%);
+$neutral-400: hsl(274, 5%, 62%);
+$neutral-300: hsl(274, 5%, 72%);
+$neutral-200: hsl(274, 5%, 82%);
+$neutral-100: hsl(274, 5%, 92%);
+$neutral-50: hsl(274, 5%, 98%);
+
+// Danger
+$danger-dark: hsl(0, 70%, 40%);
+$danger-primary: hsl(0, 70%, 50%);
+$danger-light: hsl(0, 80%, 70%);
+
+// Warning
+$warning-dark: hsl(47, 98%, 31%);
+$warning-primary: hsl(47, 98%, 50%);
+$warning-light: hsl(47, 98%, 65%);
+
+// Success
+$success-dark: hsl(126, 60%, 28%);
+$success-primary: hsl(126, 60%, 38%);
+$success-light: hsl(126, 60%, 58%);
+
+// Black & White
+$black: hsl(0, 0%, 0%);
+$white: hsl(0, 0%, 100%);
+
+// Opacity Light
+$opacity-light-primary: hsla(274, 40%, 50%, 0.1);
+$opacity-light-secondary: hsla(274, 40%, 50%, 0.18);
+
+// Opacity Dark
+$opacity-dark-primary: hsla(274, 50%, 70%, 0.1);
+$opacity-dark-secondary: hsla(234, 20%, 80%, 0.2);
+
+// Font family
+$typography_font-family: 'Inter';
+
+// Font weight
+$typography-weight-regular: 400;
+$typography-weight-medium: 500;
+$typography-weight-semi-bold: 600;
+$typography-weight-bold: 700;
+$typography-weight-extra-bold: 800;
+
+// Font style size
+$typography-size-header-1: 60px;
+$typography-size-header-2: 48px;
+$typography-size-header-3: 40px;
+$typography-size-subtitle-1: 28px;
+$typography-size-subtitle-2: 18px;
+$typography-size-body-1: 18px;
+$typography-size-body-2: 16px;
+
+// Font style line height
+$typography-line-height-header-1: 1.2;
+$typography-line-height-header-2: 1.33;
+$typography-line-height-header-3: 1.2;
+$typography-line-height-subtitle-1: 1.43;
+$typography-line-height-subtitle-2: 1.56;
+$typography-line-height-body-1: 1.56;
+$typography-line-height-body-2: 1.5;
+
+// Shadows
+$shadow-small: 0px 1px 2px 0px hsla(0, 0%, 0%, 0.3), 0px 1px 3px 1px hsla(0, 0%, 0%, 0.15);
+$shadow-medium: 0px 4px 8px 3px hsla(0, 0%, 0%, 0.15), 0px 1px 3px 0px hsla(0, 0%, 0%, 0.3);
+$shadow-large: 0px 8px 12px 6px hsla(0, 0%, 0%, 0.15), 0px 4px 4px 0px hsla(0, 0%, 0%, 0.3);
+
+// Auras
+$aura-small: 0px 1px 2px 0px hsla(0, 0%, 87%, 0.3), 0px 1px 3px 1px hsla(0, 0%, 87%, 0.15);
+$aura-medium: 0px 4px 8px 3px hsla(0, 0%, 87%, 0.15), 0px 1px 3px 0px hsla(0, 0%, 87%, 0.3);
+$aura-large: 0px 8px 12px 6px hsla(0, 0%, 87%, 0.15), 0px 4px 4px 0px hsla(0, 0%, 87%, 0.3);
