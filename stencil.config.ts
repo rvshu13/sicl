@@ -8,11 +8,6 @@ export const config: Config = {
     {
       type: 'dist',
       esmLoaderPath: '../loader',
-      copy: [
-        {
-          src: 'global/variables.scss', dest: 'variables.scss'
-        }
-      ]
     },
     {
       type: 'dist-custom-elements',
