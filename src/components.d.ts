@@ -7,12 +7,13 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface SiclButton {
-        "class": 'primary' | 'secondary' | 'tertiary' | 'danger';
         "disabled": boolean;
+        "form"?: string;
         "iconLeft"?: string;
         "iconRight"?: string;
         "name"?: string;
         "type": string;
+        "variant": 'primary' | 'secondary' | 'tertiary' | 'danger';
     }
     interface SiclCheckbox {
         "checked": boolean;
@@ -37,7 +38,7 @@ export namespace Components {
         "iconLeft": string;
         "iconRight": string;
         "inputId": string;
-        "inputType": 'text' | 'password';
+        "inputType": 'text' | 'password' | "number";
         "labelText": string;
         "maxLength": number;
         "minLength": number;
@@ -132,12 +133,13 @@ declare global {
 }
 declare namespace LocalJSX {
     interface SiclButton {
-        "class"?: 'primary' | 'secondary' | 'tertiary' | 'danger';
         "disabled"?: boolean;
+        "form"?: string;
         "iconLeft"?: string;
         "iconRight"?: string;
         "name"?: string;
         "type"?: string;
+        "variant"?: 'primary' | 'secondary' | 'tertiary' | 'danger';
     }
     interface SiclCheckbox {
         "checked"?: boolean;
@@ -163,7 +165,7 @@ declare namespace LocalJSX {
         "iconLeft"?: string;
         "iconRight"?: string;
         "inputId"?: string;
-        "inputType"?: 'text' | 'password';
+        "inputType"?: 'text' | 'password' | "number";
         "labelText"?: string;
         "maxLength"?: number;
         "minLength"?: number;
