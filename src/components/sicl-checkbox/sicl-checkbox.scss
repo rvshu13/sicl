@@ -10,6 +10,10 @@
   font-size: $typography_size-body-2;
   font-weight: $typography_weight-regular;
   line-height: $typography_line-height-body-2;
+
+  * {
+    transition: all 120ms linear;
+  }
 }
 
 .checkbox__wrapper input[type='checkbox'] {
