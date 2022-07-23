@@ -9,7 +9,7 @@ export class SiclButton {
   @Element() el: HTMLSiclButtonElement;
 
   @Prop() type: string = 'button';
-  @Prop() class: 'primary' | 'secondary' | 'tertiary' | 'danger' = 'primary';
+  @Prop() variant: 'primary' | 'secondary' | 'tertiary' | 'danger' = 'primary';
   @Prop() disabled: boolean = false;
   @Prop() name?: string;
   @Prop() iconLeft?: string;
@@ -44,7 +44,7 @@ export class SiclButton {
     return (
       <Host>
         <button 
-          class={`btn ${this.class}`} 
+          class={`btn ${this.variant}`} 
           disabled={this.disabled} type={this.type}
           name={this.name}
           onClick={this.handleClick}
