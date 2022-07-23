@@ -7,12 +7,12 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface SiclButton {
-        "class": 'primary' | 'secondary' | 'tertiary' | 'danger';
         "disabled": boolean;
         "iconLeft"?: string;
         "iconRight"?: string;
         "name"?: string;
         "type": string;
+        "variant": 'primary' | 'secondary' | 'tertiary' | 'danger';
     }
     interface SiclCheckbox {
         "checked": boolean;
@@ -132,12 +132,12 @@ declare global {
 }
 declare namespace LocalJSX {
     interface SiclButton {
-        "class"?: 'primary' | 'secondary' | 'tertiary' | 'danger';
         "disabled"?: boolean;
         "iconLeft"?: string;
         "iconRight"?: string;
         "name"?: string;
         "type"?: string;
+        "variant"?: 'primary' | 'secondary' | 'tertiary' | 'danger';
     }
     interface SiclCheckbox {
         "checked"?: boolean;
