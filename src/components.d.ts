@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface SiclButton {
         "disabled": boolean;
+        "form"?: string;
         "iconLeft"?: string;
         "iconRight"?: string;
         "name"?: string;
@@ -37,7 +38,7 @@ export namespace Components {
         "iconLeft": string;
         "iconRight": string;
         "inputId": string;
-        "inputType": 'text' | 'password';
+        "inputType": 'text' | 'password' | "number";
         "labelText": string;
         "maxLength": number;
         "minLength": number;
@@ -133,6 +134,7 @@ declare global {
 declare namespace LocalJSX {
     interface SiclButton {
         "disabled"?: boolean;
+        "form"?: string;
         "iconLeft"?: string;
         "iconRight"?: string;
         "name"?: string;
@@ -163,7 +165,7 @@ declare namespace LocalJSX {
         "iconLeft"?: string;
         "iconRight"?: string;
         "inputId"?: string;
-        "inputType"?: 'text' | 'password';
+        "inputType"?: 'text' | 'password' | "number";
         "labelText"?: string;
         "maxLength"?: number;
         "minLength"?: number;

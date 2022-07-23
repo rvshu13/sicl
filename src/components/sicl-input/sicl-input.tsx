@@ -6,7 +6,7 @@ import { Component, Host, h, Prop, State } from '@stencil/core';
   shadow: true,
 })
 export class SiclInput {
-  @Prop() inputType: 'text' | 'password' = 'text';
+  @Prop() inputType: 'text' | 'password' | "number" = 'text';
   @Prop() inputId: string;
   @Prop() labelText: string;
   @Prop() value: string | number | string[];
