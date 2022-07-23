@@ -1,4 +1,5 @@
 import { Component, h, Host, Prop, Element } from '@stencil/core';
+import { closestElementCrossShadowBoundary } from '../utils/dom';
 
 @Component({
   tag: 'sicl-button',
@@ -14,8 +15,20 @@ export class SiclButton {
   @Prop() name?: string;
   @Prop() iconLeft?: string;
   @Prop() iconRight?: string;
+  @Prop() form?: string;
 
   formEl: HTMLFormElement;
+
+  connectedCallback(): void {
+    this.formEl = closestElementCrossShadowBoundary<HTMLFormElement>(
+      this.el,
+      this.form ? `#${this.form}` : "form"
+    );
+  }
+
+  disconnectedCallback(): void {
+    this.formEl = null;
+  }
 
   iconLeftEl = () => {
     if (this.iconLeft) {
@@ -32,7 +45,6 @@ export class SiclButton {
   private handleClick = (): void => {
     const { formEl, type } = this;  
 
-    // this.type refers to type attribute, not child element type
     if (type === "submit") {
       formEl?.requestSubmit();
     } else if (type === "reset") {
@@ -45,7 +57,8 @@ export class SiclButton {
       <Host>
         <button 
           class={`btn ${this.variant}`} 
-          disabled={this.disabled} type={this.type}
+          disabled={this.disabled} 
+          type={this.type}
           name={this.name}
           onClick={this.handleClick}
         >
