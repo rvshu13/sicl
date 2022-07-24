@@ -80,7 +80,7 @@
     }
   }
 
-  &.error {
+  &:invalid {
     border: 2px solid var(--input-error-border-color);
 
     & .input__icon-right {

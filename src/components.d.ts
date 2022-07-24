@@ -38,14 +38,17 @@ export namespace Components {
         "iconLeft": string;
         "iconRight": string;
         "inputId": string;
-        "inputType": 'text' | 'password' | "number";
         "labelText": string;
+        "max": number;
         "maxLength": number;
+        "min": number;
         "minLength": number;
         "name": any;
         "placeholder": any;
         "required": boolean;
-        "value": string | number | string[];
+        "step"?: number | 'any';
+        "type": 'text' | 'password' | 'number';
+        "value": string;
     }
     interface SiclRadio {
         "checked": boolean;
@@ -165,14 +168,19 @@ declare namespace LocalJSX {
         "iconLeft"?: string;
         "iconRight"?: string;
         "inputId"?: string;
-        "inputType"?: 'text' | 'password' | "number";
         "labelText"?: string;
+        "max"?: number;
         "maxLength"?: number;
+        "min"?: number;
         "minLength"?: number;
         "name"?: any;
+        "onSiclInput"?: (event: CustomEvent<any>) => void;
+        "onSiclInputChange"?: (event: CustomEvent<void>) => void;
         "placeholder"?: any;
         "required"?: boolean;
-        "value"?: string | number | string[];
+        "step"?: number | 'any';
+        "type"?: 'text' | 'password' | 'number';
+        "value"?: string;
     }
     interface SiclRadio {
         "checked"?: boolean;
