@@ -9,12 +9,13 @@
 
 | Property    | Attribute    | Description | Type                                                 | Default     |
 | ----------- | ------------ | ----------- | ---------------------------------------------------- | ----------- |
-| `class`     | `class`      |             | `"danger" \| "primary" \| "secondary" \| "tertiary"` | `'primary'` |
 | `disabled`  | `disabled`   |             | `boolean`                                            | `false`     |
+| `form`      | `form`       |             | `string`                                             | `undefined` |
 | `iconLeft`  | `icon-left`  |             | `string`                                             | `undefined` |
 | `iconRight` | `icon-right` |             | `string`                                             | `undefined` |
 | `name`      | `name`       |             | `string`                                             | `undefined` |
 | `type`      | `type`       |             | `string`                                             | `'button'`  |
+| `variant`   | `variant`    |             | `"danger" \| "primary" \| "secondary" \| "tertiary"` | `'primary'` |
 
 
 ## Dependencies
