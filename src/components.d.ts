@@ -18,16 +18,19 @@ export namespace Components {
     interface SiclCheckbox {
         "checked": boolean;
         "disabled": boolean;
+        "formAssociated": boolean;
         "indeterminate": boolean;
         "inputId": string;
         "labelText"?: string;
         "name": string;
         "required": boolean;
+        "value": string;
     }
     interface SiclCheckboxGroup {
         "disabled": boolean;
         "labelText": string;
         "name": string;
+        "value": string;
     }
     interface SiclIcon {
         "name": string;
@@ -35,6 +38,7 @@ export namespace Components {
     }
     interface SiclInput {
         "disabled": boolean;
+        "formAssociated": boolean;
         "iconLeft": string;
         "iconRight": string;
         "inputId": string;
@@ -48,12 +52,12 @@ export namespace Components {
         "required": boolean;
         "step"?: number | 'any';
         "type": 'text' | 'password' | 'number';
-        "value": string;
     }
     interface SiclRadio {
         "checked": boolean;
         "disabled": boolean;
         "emitCheckedChange": () => Promise<void>;
+        "formAssociated": boolean;
         "guid": string;
         "inputId": string;
         "labelText"?: string;
@@ -147,17 +151,20 @@ declare namespace LocalJSX {
     interface SiclCheckbox {
         "checked"?: boolean;
         "disabled"?: boolean;
+        "formAssociated"?: boolean;
         "indeterminate"?: boolean;
         "inputId"?: string;
         "labelText"?: string;
         "name"?: string;
         "onSiclCheckboxChange"?: (event: CustomEvent<any>) => void;
         "required"?: boolean;
+        "value"?: string;
     }
     interface SiclCheckboxGroup {
         "disabled"?: boolean;
         "labelText": string;
         "name": string;
+        "value"?: string;
     }
     interface SiclIcon {
         "name"?: string;
@@ -165,6 +172,7 @@ declare namespace LocalJSX {
     }
     interface SiclInput {
         "disabled"?: boolean;
+        "formAssociated"?: boolean;
         "iconLeft"?: string;
         "iconRight"?: string;
         "inputId"?: string;
@@ -174,17 +182,15 @@ declare namespace LocalJSX {
         "min"?: number;
         "minLength"?: number;
         "name"?: any;
-        "onSiclInput"?: (event: CustomEvent<any>) => void;
-        "onSiclInputChange"?: (event: CustomEvent<void>) => void;
         "placeholder"?: any;
         "required"?: boolean;
         "step"?: number | 'any';
         "type"?: 'text' | 'password' | 'number';
-        "value"?: string;
     }
     interface SiclRadio {
         "checked"?: boolean;
         "disabled"?: boolean;
+        "formAssociated"?: boolean;
         "guid"?: string;
         "inputId"?: string;
         "labelText"?: string;

@@ -24,6 +24,7 @@ export class SiclRadio {
   @Prop() inputId: string;
   @Prop() value: string;
   @Prop({ reflect: true }) name: string;
+  @Prop({ reflect: true }) formAssociated: boolean;
 
   @Watch('name')
   nameChanged(): void {
@@ -40,9 +41,7 @@ export class SiclRadio {
   @Event() siclRadioChange: EventEmitter;
 
   formEl: HTMLFormElement;
-
   defaultChecked: boolean;
-
   defaultValue: SiclRadio['value'];
 
   private checkLastRadio(): void {
@@ -102,6 +101,19 @@ export class SiclRadio {
     this.check();
   };
 
+  componentDidLoad(): void {
+    if (this.formAssociated) {
+      const input = document.createElement('input');
+      input.name = this.name;
+      input.id = this.name;
+      input.value = this.value;
+      input.type = 'hidden';
+      this.el.appendChild(input);
+
+      this.setInputHidden(this.value);
+    }
+  }
+
   connectedCallback(): void {
     this.rootNode = this.el.getRootNode() as HTMLElement;
     this.guid = this.el.id || `sicl-radio-${Math.random()}`;
@@ -109,6 +121,12 @@ export class SiclRadio {
       this.checkLastRadio();
     }
     connectForm(this);
+  }
+
+  private setInputHidden(value: string = this.value): void {
+    if (this.formAssociated) {
+      (this.el.querySelector(`input[name=${this.name}]`) as HTMLInputElement).value = value;
+    }
   }
 
   disconnectedCallback(): void {
@@ -119,7 +137,7 @@ export class SiclRadio {
     return (
       <Host>
         <label class="radio__wrapper">
-          <input class="radio__input" type="radio" id={this.inputId} onClick={this.clickHandler} checked={this.checked} disabled={this.disabled}></input>
+          <input class="radio__input" type="radio" id={this.inputId} value={this.value} onClick={this.clickHandler} checked={this.checked} disabled={this.disabled}></input>
           {this.labelText && <span class="radio__label">{this.labelText}</span>}
         </label>
       </Host>
