@@ -1,5 +1,5 @@
-import { Component, Element, Host, h, Prop, State, Watch, EventEmitter } from '@stencil/core';
-import { connectForm, disconnectForm, renderInputOutsideShadowRoot } from '../../utils/dom';
+import { Component, Element, Host, h, Prop, State, Watch } from '@stencil/core';
+import { connectForm, disconnectForm } from '../../utils/dom';
 
 @Component({
   tag: 'sicl-input',
