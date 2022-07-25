@@ -1,4 +1,5 @@
-import { Component, Host, h, Prop, State } from '@stencil/core';
+import { Component, Element, Host, h, Prop, State, Watch } from '@stencil/core';
+import { connectForm, disconnectForm } from '../../utils/dom';
 
 @Component({
   tag: 'sicl-input',
@@ -6,24 +7,70 @@ import { Component, Host, h, Prop, State } from '@stencil/core';
   shadow: true,
 })
 export class SiclInput {
-  @Prop() inputType: 'text' | 'password' | "number" = 'text';
+  @Element() el!: HTMLSiclInputElement;
+
+  @State() value: any | null = "";
+
+  @Prop({ reflect: true }) type: 'text' | 'password' | 'number' = 'text';
   @Prop() inputId: string;
   @Prop() labelText: string;
-  @Prop() value: string | number | string[];
-  @Prop() name: any;
-  @Prop() required: boolean;
-  @Prop() minLength: number;
-  @Prop() maxLength: number;
+  @Prop({ reflect: true }) name: any;
+  @Prop({ reflect: true }) required: boolean;
+  @Prop({ reflect: true }) min: number;
+  @Prop({ reflect: true }) max: number;
+  @Prop({ reflect: true }) minLength: number;
+  @Prop({ reflect: true }) maxLength: number;
   @Prop() placeholder: any;
-  @Prop() disabled: boolean;
-  @Prop() iconLeft: string;
-  @Prop() iconRight: string;
+  @Prop({ reflect: true }) step?: number | 'any';
+  @Prop({ reflect: true }) disabled: boolean;
+  @Prop({ reflect: true }) iconLeft: string;
+  @Prop({ reflect: true }) iconRight: string;
+  @Prop({ reflect: true }) formAssociated: boolean;
 
-  // handleInput: (event: Event) => void;
-  // handleChange: (event: Event) => void;
-  // handleFocus: (event: FocusEvent) => void;
+  formEl: HTMLFormElement;
+  defaultValue = SiclInput['value'];
 
-  @State() hasFocus: boolean = false;
+  handleChange(event: Event) {
+    this.value = (event.target as HTMLInputElement).value;
+    this.valueChanged(this.value);
+  }
+
+  onFormReset(): void {
+    console.log('BEFORE this.value', this.value);
+    this.updateInputHidden(this.defaultValue);
+    this.value = this.defaultValue;
+    console.log('AFTER this.value', this.value);
+  }
+
+  connectedCallback(): void {
+    connectForm(this);
+  }
+
+  disconnectedCallback(): void {
+    disconnectForm(this);
+  }
+
+  componentDidLoad(): void {
+    if (this.formAssociated) {
+      const input = document.createElement('input');
+      input.name = this.name;
+      input.id = this.name;
+      input.value = this.value;
+      input.type = 'hidden';
+      this.el.appendChild(input);
+    }
+  }
+
+  private updateInputHidden(value: string = this.value): void {
+    if (this.formAssociated) {
+      (this.el.querySelector(`input[name=${this.name}]`) as HTMLInputElement).value = value;
+    }
+  }
+
+  @Watch('value')
+  valueChanged(newValue: string) {
+    this.updateInputHidden(newValue);
+  }
 
   render() {
     return (
@@ -34,19 +81,22 @@ export class SiclInput {
         <label class="input__wrapper">
           {this.iconLeft && <sicl-icon class="input__icon-left" name={this.iconLeft} size={'20px'}></sicl-icon>}
           <input
-            type={this.inputType}
+            type={this.type}
             class="input__field"
-            value={this.value}
             {...(!!this.name ? { name: this.name } : {})}
             required={this.required}
+            enterKeyHint={this.el.enterKeyHint}
+            inputMode={this.el.inputMode}
+            min={this.min}
+            max={this.max}
             minLength={this.minLength}
             maxLength={this.maxLength}
+            step={this.step}
             id={this.inputId}
-            // onInput={this.handleInput}
-            // onChange={this.handleChange}
-            // onFocus={this.handleFocus}
             {...(!!this.placeholder ? { placeholder: this.placeholder } : {})}
+            value={this.value}
             disabled={this.disabled}
+            onInput={(event) => this.handleChange(event)}
           />
           {this.iconRight && <sicl-icon class="input__icon-right" name={this.iconRight} size={'20px'}></sicl-icon>}
         </label>

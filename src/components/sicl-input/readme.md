@@ -7,20 +7,23 @@
 
 ## Properties
 
-| Property      | Attribute     | Description | Type                           | Default     |
-| ------------- | ------------- | ----------- | ------------------------------ | ----------- |
-| `disabled`    | `disabled`    |             | `boolean`                      | `undefined` |
-| `iconLeft`    | `icon-left`   |             | `string`                       | `undefined` |
-| `iconRight`   | `icon-right`  |             | `string`                       | `undefined` |
-| `inputId`     | `input-id`    |             | `string`                       | `undefined` |
-| `inputType`   | `input-type`  |             | `"password" \| "text"`         | `'text'`    |
-| `labelText`   | `label-text`  |             | `string`                       | `undefined` |
-| `maxLength`   | `max-length`  |             | `number`                       | `undefined` |
-| `minLength`   | `min-length`  |             | `number`                       | `undefined` |
-| `name`        | `name`        |             | `any`                          | `undefined` |
-| `placeholder` | `placeholder` |             | `any`                          | `undefined` |
-| `required`    | `required`    |             | `boolean`                      | `undefined` |
-| `value`       | `value`       |             | `number \| string \| string[]` | `undefined` |
+| Property         | Attribute         | Description | Type                               | Default     |
+| ---------------- | ----------------- | ----------- | ---------------------------------- | ----------- |
+| `disabled`       | `disabled`        |             | `boolean`                          | `undefined` |
+| `formAssociated` | `form-associated` |             | `boolean`                          | `undefined` |
+| `iconLeft`       | `icon-left`       |             | `string`                           | `undefined` |
+| `iconRight`      | `icon-right`      |             | `string`                           | `undefined` |
+| `inputId`        | `input-id`        |             | `string`                           | `undefined` |
+| `labelText`      | `label-text`      |             | `string`                           | `undefined` |
+| `max`            | `max`             |             | `number`                           | `undefined` |
+| `maxLength`      | `max-length`      |             | `number`                           | `undefined` |
+| `min`            | `min`             |             | `number`                           | `undefined` |
+| `minLength`      | `min-length`      |             | `number`                           | `undefined` |
+| `name`           | `name`            |             | `any`                              | `undefined` |
+| `placeholder`    | `placeholder`     |             | `any`                              | `undefined` |
+| `required`       | `required`        |             | `boolean`                          | `undefined` |
+| `step`           | `step`            |             | `"any" \| number`                  | `undefined` |
+| `type`           | `type`            |             | `"number" \| "password" \| "text"` | `'text'`    |
 
 
 ## Dependencies

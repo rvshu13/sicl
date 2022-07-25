@@ -1,4 +1,5 @@
 import { Component, Element, Event, EventEmitter, h, Host, Method, Prop, Watch } from '@stencil/core';
+import { connectForm, disconnectForm } from '../../utils/dom';
 
 @Component({
   tag: 'sicl-radio',
@@ -9,7 +10,7 @@ export class SiclRadio {
   @Element() el: HTMLSiclRadioElement;
   @Prop({ reflect: true, mutable: true }) checked = false;
 
-  @Watch("checked")
+  @Watch('checked')
   checkedChanged(newChecked: boolean): void {
     if (newChecked) {
       this.uncheckOtherRadiosInGroup();
@@ -23,29 +24,34 @@ export class SiclRadio {
   @Prop() inputId: string;
   @Prop() value: string;
   @Prop({ reflect: true }) name: string;
+  @Prop({ reflect: true }) formAssociated: boolean;
 
-  @Watch("name")
+  @Watch('name')
   nameChanged(): void {
     this.checkLastRadio();
   }
 
   @Prop({ reflect: true, mutable: true }) guid: string;
   @Prop() labelText?: string;
-  
+
   rootNode: HTMLElement;
 
   /** @internal */
   @Event() siclInternalRadioCheckedChange: EventEmitter;
   @Event() siclRadioChange: EventEmitter;
 
+  formEl: HTMLFormElement;
+  defaultChecked: boolean;
+  defaultValue: SiclRadio['value'];
+
   private checkLastRadio(): void {
     const radios = this.queryRadios();
-    const checkedRadios = radios.filter((radioButton) => radioButton.checked);
+    const checkedRadios = radios.filter(radioButton => radioButton.checked);
 
     if (checkedRadios?.length > 1) {
       const lastCheckedRadio = checkedRadios[checkedRadios.length - 1];
       checkedRadios
-        .filter((checkedRadio) => checkedRadio !== lastCheckedRadio)
+        .filter(checkedRadio => checkedRadio !== lastCheckedRadio)
         .forEach((checkedRadio: HTMLSiclRadioElement) => {
           checkedRadio.checked = false;
           checkedRadio.emitCheckedChange();
@@ -61,7 +67,7 @@ export class SiclRadio {
 
   private uncheckAllRadiosInGroup(): void {
     const radioButtons = this.queryRadios();
-    radioButtons.forEach((radioButton) => {
+    radioButtons.forEach(radioButton => {
       if (radioButton.checked) {
         radioButton.checked = false;
       }
@@ -70,8 +76,8 @@ export class SiclRadio {
 
   private uncheckOtherRadiosInGroup(): void {
     const Radios = this.queryRadios();
-    const otherRadios = Radios.filter((Radio) => Radio.guid !== this.guid);
-    otherRadios.forEach((otherRadio) => {
+    const otherRadios = Radios.filter(Radio => Radio.guid !== this.guid);
+    otherRadios.forEach(otherRadio => {
       if (otherRadio.checked) {
         otherRadio.checked = false;
       }
@@ -79,9 +85,7 @@ export class SiclRadio {
   }
 
   queryRadios = (): HTMLSiclRadioElement[] => {
-    return Array.from(this.rootNode.querySelectorAll("sicl-radio:not([hidden])")).filter(
-      (radio: HTMLSiclRadioElement) => radio.name === this.name
-    ) as HTMLSiclRadioElement[];
+    return Array.from(this.rootNode.querySelectorAll('sicl-radio:not([hidden])')).filter((radio: HTMLSiclRadioElement) => radio.name === this.name) as HTMLSiclRadioElement[];
   };
 
   check = (): void => {
@@ -97,26 +101,43 @@ export class SiclRadio {
     this.check();
   };
 
+  componentDidLoad(): void {
+    if (this.formAssociated) {
+      const input = document.createElement('input');
+      input.name = this.name;
+      input.id = this.name;
+      input.value = this.value;
+      input.type = 'hidden';
+      this.el.appendChild(input);
+
+      this.setInputHidden(this.value);
+    }
+  }
+
   connectedCallback(): void {
     this.rootNode = this.el.getRootNode() as HTMLElement;
     this.guid = this.el.id || `sicl-radio-${Math.random()}`;
     if (this.name) {
       this.checkLastRadio();
     }
+    connectForm(this);
+  }
+
+  private setInputHidden(value: string = this.value): void {
+    if (this.formAssociated) {
+      (this.el.querySelector(`input[name=${this.name}]`) as HTMLInputElement).value = value;
+    }
+  }
+
+  disconnectedCallback(): void {
+    disconnectForm(this);
   }
 
   render() {
     return (
       <Host>
         <label class="radio__wrapper">
-          <input 
-            class="radio__input" 
-            type="radio" 
-            id={this.inputId} 
-            onClick={this.clickHandler}
-            checked={this.checked}
-            disabled={this.disabled}
-          ></input>
+          <input class="radio__input" type="radio" id={this.inputId} value={this.value} onClick={this.clickHandler} checked={this.checked} disabled={this.disabled}></input>
           {this.labelText && <span class="radio__label">{this.labelText}</span>}
         </label>
       </Host>

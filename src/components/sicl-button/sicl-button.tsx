@@ -1,5 +1,5 @@
 import { Component, h, Host, Prop, Element } from '@stencil/core';
-import { closestElementCrossShadowBoundary } from '../utils/dom';
+import { closestElementCrossShadowBoundary } from '../../utils/dom';
 
 @Component({
   tag: 'sicl-button',

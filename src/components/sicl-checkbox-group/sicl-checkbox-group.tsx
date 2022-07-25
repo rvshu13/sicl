@@ -7,13 +7,29 @@ import { Component, Element, Host, h, Prop, VNode } from '@stencil/core';
 })
 export class SiclCheckboxGroup {
   @Element() el: HTMLElement;
+
+  @Prop({ reflect: true }) value = "";
   @Prop({ reflect: true }) disabled = false;
   @Prop({ reflect: true }) name!: string;
   @Prop({ reflect: true }) labelText!: string;
 
+  connectedCallback(): void {
+    this.passPropsToCheckboxes();
+  }
+
+  passPropsToCheckboxes(): void {
+    const checkboxes = this.el.querySelectorAll('sicl-checkbox');
+    if (checkboxes.length > 0) {
+      checkboxes.forEach( checkbox => {
+        checkbox.disabled = this.disabled || checkbox.disabled;
+        checkbox.name = this.name;
+      });
+    }
+  }
+
   render(): VNode {
     return (
-      <Host role="checkboxgroup">
+      <Host name={this.name} disabled={this.disabled}>
         <label class="checkboxgroup__label">
           {this.labelText}
         </label>

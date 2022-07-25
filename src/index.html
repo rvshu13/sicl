@@ -7,69 +7,90 @@
     <link rel="stylesheet" href="/build/sicl.css" />
     <script type="module" src="/build/sicl.esm.js"></script>
     <script nomodule src="/build/sicl.js"></script>
-    <style>
+    <script>
+      const handleSubmit = e => {
+        e.preventDefault();
+        e.stopPropagation();
+        let form = e.target;
+        let formData = new FormData(form);
+        let expense = {
+          dateAdded: date.toISOString(),
+          description: formData.get('description'),
+          value: formData.get('value'),
+          paymentType: formData.get('paymentType'),
+          additional: formData.getAll('additional'),
+        };
+
+        console.log('expense', expense);
+
+        return false;
+      };
+    </script>
+    <style lang="scss">
       html {
         background-color: var(--background-color);
+      }
+
+      form {
+        background-color: var(--container-background-color);
+        border-radius: 8px;
+        border: 1px solid var(--container-border-color);
+        box-sizing: border-box;
+        padding: 36px 48px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+      }
+
+      .form-header {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        height: 100%;
+      }
+
+      .form-buttons {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        column-gap: 64px;
+        width: 100%;
+        padding: 8px 128px 0 128px;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="row">
-        <sicl-button variant="primary" type="button">Button</sicl-button>
-        <sicl-button variant="secondary" type="button">Button</sicl-button>
-        <sicl-button variant="tertiary" type="button">Button</sicl-button>
-        <sicl-button variant="danger" type="button">Button</sicl-button>
-      </div>
-      <div class="row">
-        <sicl-button variant="primary" type="button" icon-left="search">Button</sicl-button>
-        <sicl-button variant="secondary" type="button" icon-left="arrow-left">Button</sicl-button>
-        <sicl-button variant="tertiary" type="button" icon-left="help-circle">Button</sicl-button>
-        <sicl-button variant="danger" type="button" icon-left="trash-2">Button</sicl-button>
-      </div>
-      <div class="row">
-        <sicl-button variant="primary" type="button" icon-right="search">Button</sicl-button>
-        <sicl-button variant="secondary" type="button" icon-right="arrow-left">Button</sicl-button>
-        <sicl-button variant="tertiary" type="button" icon-right="help-circle">Button</sicl-button>
-        <sicl-button variant="danger" type="button" icon-right="trash-2">Button</sicl-button>
-      </div>
-      <div class="row">
-        <sicl-button variant="primary" type="button" disabled>Button</sicl-button>
-        <sicl-button variant="secondary" type="button" disabled>Button</sicl-button>
-        <sicl-button variant="tertiary" type="button" disabled>Button</sicl-button>
-        <sicl-button variant="danger" type="button" disabled>Button</sicl-button>
-      </div>
-      <div class="row">
-        <sicl-input type="text" placeholder="Placeholder" label-text="Default"></sicl-input>
-        <sicl-input type="text" placeholder="Placeholder" label-text="Default" value="Filled"></sicl-input>
-        <sicl-input type="text" placeholder="Placeholder" label-text="Left icon" icon-left="search"></sicl-input>
-        <sicl-input type="text" placeholder="Placeholder" label-text="Right icon" icon-right="eye"></sicl-input>
-      </div>
-      <div class="row">
-        <div class="column">
-          <sicl-checkbox-group name="checkboxes" label-text="Checkboxes">
-            <sicl-checkbox label-text="Default"></sicl-checkbox>
-            <sicl-checkbox label-text="Checked" checked></sicl-checkbox>
-            <sicl-checkbox label-text="Disabled" disabled></sicl-checkbox>
-            <sicl-checkbox label-text="Disabled & checked" disabled checked></sicl-checkbox>
-          </sicl-checkbox-group>
-        </div>
-        <sicl-radio-group name="options" label-text="Options">
-          <sicl-radio label-text="Option 1"></sicl-radio>
-          <sicl-radio label-text="Option 2" checked></sicl-radio>
-          <sicl-radio label-text="Option 3"></sicl-radio>
-          <sicl-radio label-text="Option 4"></sicl-radio>
+    <form onsubmit="(e) => handleSubmit(e)">
+      <span class="form-header">
+        <h3>Any expenses today?</h3>
+        <p class="body-1 regular">Put them in with the form below, I will <i>try</i> to save them in a list on the right.</p>
+      </span>
+      <span class="form-wrapper">
+        <sicl-input name="description" style="width: 100%" label-text="Name (max. 40 characters)" placeholder="ex. Dinner" max-length="40" form-associated="true"></sicl-input>
+        <sicl-input name="value" style="width: 35%" type="number" step="0.01" min="0" label-text="Value" placeholder="4.11" form-associated="true"></sicl-input>
+        <sicl-radio-group name="paymentType" label-text="Payment type">
+          <sicl-radio value="card" label-text="💳 Card" form-associated="true" checked></sicl-radio>
+          <sicl-radio value="cash" label-text="💵 Cash" form-associated="true"></sicl-radio>
         </sicl-radio-group>
-        <sicl-radio-group name="disabled" label-text="Disabled">
-          <sicl-radio label-text="Disabled" disabled></sicl-radio>
-          <sicl-radio label-text="Disabled & checked" disabled checked></sicl-radio>
-        </sicl-radio-group>
-      </div>
-      <div class="row">
-        <sicl-toast label="toast-success" type="success" active="">
-          <div slot="message">Even larger message just to see how long it will be</div>
-        </sicl-toast>
-      </div>
-    </div>
+        <sicl-checkbox-group name="additional" label-text="Additional info">
+          <sicl-checkbox value="fast-food" label-text="🍟 Fast food" form-associated="true"></sicl-checkbox>
+          <sicl-checkbox value="alcohol" label-text="🍻 Alcohol" form-associated="true"></sicl-checkbox>
+          <sicl-checkbox value="regret" label-text="👀 Do you regret this?" form-associated="true"></sicl-checkbox>
+        </sicl-checkbox-group>
+        <span class="form-buttons">
+          <sicl-button type="reset" variant="tertiary" icon-left="trash">Clear</sicl-button>
+          <sicl-button type="submit" variant="primary" icon-right="arrow-right">Add an expense</sicl-button>
+        </span>
+      </span>
+    </form>
   </body>
 </html>
