@@ -70,6 +70,7 @@ export class SiclRadio {
     radioButtons.forEach(radioButton => {
       if (radioButton.checked) {
         radioButton.checked = false;
+        this.setInputHidden(radioButton, false);
       }
     });
   }
@@ -80,6 +81,7 @@ export class SiclRadio {
     otherRadios.forEach(otherRadio => {
       if (otherRadio.checked) {
         otherRadio.checked = false;
+        this.setInputHidden(otherRadio, false);
       }
     });
   }
@@ -94,6 +96,7 @@ export class SiclRadio {
     }
     this.uncheckAllRadiosInGroup();
     this.checked = true;
+    this.setInputHidden(this.el, true);
     this.siclRadioChange.emit();
   };
 
@@ -107,10 +110,10 @@ export class SiclRadio {
       input.name = this.name;
       input.id = this.name;
       input.value = this.value;
-      input.type = 'hidden';
+      input.type = 'checkbox';
+      input.checked = this.checked;
+      input.style.display = 'none';
       this.el.appendChild(input);
-
-      this.setInputHidden(this.value);
     }
   }
 
@@ -123,21 +126,21 @@ export class SiclRadio {
     connectForm(this);
   }
 
-  private setInputHidden(value: string = this.value): void {
-    if (this.formAssociated) {
-      (this.el.querySelector(`input[name=${this.name}]`) as HTMLInputElement).value = value;
-    }
-  }
-
   disconnectedCallback(): void {
     disconnectForm(this);
+  }
+
+  private setInputHidden(el: HTMLSiclRadioElement, checked: boolean = this.checked): void {
+    if (this.formAssociated) {
+      (el.querySelector(`input[name=${this.name}]`) as HTMLInputElement).checked = checked;
+    }
   }
 
   render() {
     return (
       <Host>
         <label class="radio__wrapper">
-          <input class="radio__input" type="radio" id={this.inputId} value={this.value} onClick={this.clickHandler} checked={this.checked} disabled={this.disabled}></input>
+          <input class="radio__input" type="radio" id={this.inputId} value={this.value} name={this.name} onClick={this.clickHandler} checked={this.checked} disabled={this.disabled}></input>
           {this.labelText && <span class="radio__label">{this.labelText}</span>}
         </label>
       </Host>
