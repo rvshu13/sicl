@@ -9,14 +9,14 @@ import { connectForm, disconnectForm } from '../../utils/dom';
 export class SiclCheckbox {
   @Element() el: HTMLSiclCheckboxElement;
 
-  @Prop({ reflect: true }) required = false;
   @Prop({ reflect: true, mutable: true }) checked = false;
+  @Prop() inputId: string;
+  @Prop({ reflect: true }) value: string;
+  @Prop({ reflect: true }) required = false;
+  @Prop() labelText?: string;
   @Prop({ reflect: true }) disabled = false;
   @Prop({ reflect: true, mutable: true }) indeterminate = false;
-  @Prop() inputId: string;
   @Prop({ reflect: true }) name: string;
-  @Prop() labelText?: string;
-  @Prop({ reflect: true }) value: string;
   @Prop({ reflect: true }) formAssociated: boolean;
 
   @Event() siclCheckboxChange: EventEmitter;
@@ -34,7 +34,7 @@ export class SiclCheckbox {
     if (!this.disabled) {
       this.checked = !this.checked;
       this.indeterminate = false;
-      this.setInputHidden(this.el, !this.checked);
+      this.setInputHidden(this.el, this.checked);
       this.siclCheckboxChange.emit();
     }
   };
