@@ -78,6 +78,22 @@ export namespace Components {
         "type": 'primary' | 'danger' | 'warning' | 'success';
     }
 }
+export interface SiclCheckboxCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLSiclCheckboxElement;
+}
+export interface SiclRadioCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLSiclRadioElement;
+}
+export interface SiclRadioGroupCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLSiclRadioGroupElement;
+}
+export interface SiclToastCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLSiclToastElement;
+}
 declare global {
     interface HTMLSiclButtonElement extends Components.SiclButton, HTMLStencilElement {
     }
@@ -156,7 +172,7 @@ declare namespace LocalJSX {
         "inputId"?: string;
         "labelText"?: string;
         "name"?: string;
-        "onSiclCheckboxChange"?: (event: CustomEvent<any>) => void;
+        "onSiclCheckboxChange"?: (event: SiclCheckboxCustomEvent<any>) => void;
         "required"?: boolean;
         "value"?: string;
     }
@@ -195,8 +211,8 @@ declare namespace LocalJSX {
         "inputId"?: string;
         "labelText"?: string;
         "name"?: string;
-        "onSiclInternalRadioCheckedChange"?: (event: CustomEvent<any>) => void;
-        "onSiclRadioChange"?: (event: CustomEvent<any>) => void;
+        "onSiclInternalRadioCheckedChange"?: (event: SiclRadioCustomEvent<any>) => void;
+        "onSiclRadioChange"?: (event: SiclRadioCustomEvent<any>) => void;
         "required"?: boolean;
         "value"?: string;
     }
@@ -204,17 +220,17 @@ declare namespace LocalJSX {
         "disabled"?: boolean;
         "labelText": string;
         "name": string;
-        "onSiclRadioGroupChange"?: (event: CustomEvent<any>) => void;
+        "onSiclRadioGroupChange"?: (event: SiclRadioGroupCustomEvent<any>) => void;
         "required"?: boolean;
     }
     interface SiclToast {
         "active"?: false;
         "dismissDuration"?: string;
         "label": string;
-        "onSiclToastHide"?: (event: CustomEvent<any>) => void;
-        "onSiclToastRegister"?: (event: CustomEvent<any>) => void;
-        "onSiclToastShow"?: (event: CustomEvent<any>) => void;
-        "onSiclToastSync"?: (event: CustomEvent<any>) => void;
+        "onSiclToastHide"?: (event: SiclToastCustomEvent<any>) => void;
+        "onSiclToastRegister"?: (event: SiclToastCustomEvent<any>) => void;
+        "onSiclToastShow"?: (event: SiclToastCustomEvent<any>) => void;
+        "onSiclToastSync"?: (event: SiclToastCustomEvent<any>) => void;
         "type"?: 'primary' | 'danger' | 'warning' | 'success';
     }
     interface IntrinsicElements {

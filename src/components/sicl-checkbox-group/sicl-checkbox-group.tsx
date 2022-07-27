@@ -8,7 +8,7 @@ import { Component, Element, Host, h, Prop, VNode } from '@stencil/core';
 export class SiclCheckboxGroup {
   @Element() el: HTMLElement;
 
-  @Prop({ reflect: true }) value = "";
+  @Prop({ reflect: true }) value: string;
   @Prop({ reflect: true }) disabled = false;
   @Prop({ reflect: true }) name!: string;
   @Prop({ reflect: true }) labelText!: string;
