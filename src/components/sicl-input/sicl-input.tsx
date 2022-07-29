@@ -36,10 +36,8 @@ export class SiclInput {
   }
 
   onFormReset(): void {
-    console.log('BEFORE this.value', this.value);
     this.updateInputHidden(this.defaultValue);
     this.value = this.defaultValue;
-    console.log('AFTER this.value', this.value);
   }
 
   connectedCallback(): void {

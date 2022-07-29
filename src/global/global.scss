@@ -170,7 +170,7 @@ p {
   margin: 0;
   color: var(--text-paragraph-color);
 
-  .body-1 {
+  &.body-1 {
     font-size: $typography_size-body-1;
     line-height: $typography_line-height-body-1;
 
@@ -185,7 +185,7 @@ p {
     }
   }
 
-  .body-2 {
+  &.body-2 {
     font-weight: $typography_weight-regular;
     font-size: $typography_size-body-2;
     line-height: $typography_line-height-body-2;
